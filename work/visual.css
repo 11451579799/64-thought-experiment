@@ -1,0 +1,130 @@
+.sigil-astrolabe,
+.sigil-collapse,
+.sigil-wax {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.sigil-astrolabe {
+  overflow: visible;
+}
+
+.sigil-marker {
+  transition: fill 240ms ease, fill-opacity 240ms ease, stroke-opacity 320ms ease;
+}
+
+.sigil-marker.is-lit {
+  filter: drop-shadow(0 0 3px rgba(225, 184, 120, .34));
+}
+
+.sigil-texture {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 25;
+  opacity: .19;
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+
+.sigil-wax {
+  overflow: visible;
+  filter: drop-shadow(0 4px 8px rgba(6, 3, 4, .54));
+}
+
+.sigil-wax-piece {
+  transform-box: view-box;
+  transform-origin: 50% 50%;
+}
+
+.is-shattered .sigil-wax-piece {
+  animation: sigil-wax-shatter 760ms cubic-bezier(.2, .72, .3, 1) both;
+}
+
+@keyframes sigil-wax-shatter {
+  0%   { transform: translate(0, 0) rotate(0); opacity: 1; }
+  15%  { opacity: 1; }
+  100% { transform: translate(var(--wax-x), var(--wax-y)) rotate(var(--wax-r)); opacity: 0; }
+}
+
+.sigil-calc-rings,
+.sigil-calc-matrix,
+.sigil-calc-flare {
+  transform-box: view-box;
+  transform-origin: 50% 50%;
+}
+
+.sigil-calc-rings {
+  animation: sigil-calc-rings 4s ease-in-out both;
+}
+
+.sigil-calc-matrix {
+  animation: sigil-calc-spin 4s cubic-bezier(.3, .03, .45, 1) both;
+}
+
+.sigil-calc-node {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: sigil-calc-node 3400ms var(--calc-delay) ease-in-out both;
+}
+
+.sigil-calc-flare {
+  animation: sigil-calc-flare 4s ease-in-out both;
+}
+
+@keyframes sigil-calc-rings {
+  0%   { transform: scale(.84) rotate(-14deg); opacity: .22; }
+  45%  { transform: scale(1) rotate(18deg); opacity: .62; }
+  82%  { transform: scale(.54) rotate(88deg); opacity: .42; }
+  95%  { transform: scale(1.06) rotate(101deg); opacity: .24; }
+  100% { transform: scale(1.16) rotate(105deg); opacity: 0; }
+}
+
+@keyframes sigil-calc-spin {
+  0%   { transform: rotate(-25deg); }
+  50%  { transform: rotate(0deg); }
+  100% { transform: rotate(96deg); }
+}
+
+@keyframes sigil-calc-node {
+  0%   { transform: scale(.4); opacity: .16; }
+  27%  { transform: scale(1); opacity: .9; }
+  52%  { transform: scale(.78); opacity: .62; }
+  100% { transform: translate(var(--calc-x), var(--calc-y)) scale(.06); opacity: 0; }
+}
+
+@keyframes sigil-calc-flare {
+  0%, 69% { transform: scale(.08); opacity: 0; }
+  87%     { transform: scale(.65); opacity: .94; }
+  100%    { transform: scale(.35); opacity: .52; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sigil-marker {
+    transition: none;
+  }
+
+  .is-shattered .sigil-wax-piece {
+    animation: none;
+    opacity: 0;
+  }
+
+  .sigil-calc-rings,
+  .sigil-calc-matrix,
+  .sigil-calc-node,
+  .sigil-calc-flare {
+    animation: none;
+  }
+
+  .sigil-calc-rings,
+  .sigil-calc-matrix {
+    opacity: .38;
+  }
+
+  .sigil-calc-flare {
+    transform: scale(.35);
+    opacity: .55;
+  }
+}

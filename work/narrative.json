@@ -1,0 +1,2214 @@
+{
+  "chapters": [
+    {
+      "name": "存在与虚无",
+      "reveal": "第一层轮廓浮现。你留给空白的位置，和你亲手填满的位置一样清晰。",
+      "questions": [
+        {
+          "prompt": "有一天醒来，你的影子还在，镜中却只照见身后的空房。你先做什么？",
+          "options": [
+            {
+              "text": "写下今天要做的事，照原计划出门。",
+              "scores": {
+                "existentialist": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "翻找童年照片，确认自己曾在谁身旁。",
+              "scores": {
+                "remembrancer": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "对镜子鞠躬，看看这场荒唐还会怎样继续。",
+              "scores": {
+                "absurdist": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "用床单盖住镜子，把早餐吃完。",
+              "scores": {
+                "cynic": 3,
+                "linguist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "一座城市要求每人交存一样东西，才能领到存在证。你交出什么？",
+          "options": [
+            {
+              "text": "一封为陌生人作证的实名信。",
+              "scores": {
+                "ethical": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "一页只写了「我」字的纸。",
+              "scores": {
+                "linguist": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "一段写给空房间的旋律。",
+              "scores": {
+                "aesthetic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "一张替邻居代收的包裹签单。",
+              "scores": {
+                "relational": 3,
+                "remembrancer": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "博物馆展出你一生中从未做过的事。其中一件被评为馆藏之最。你如何回应？",
+          "options": [
+            {
+              "text": "参加颁奖，念一份从未写过的致辞。",
+              "scores": {
+                "absurdist": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "请曾和我一起放弃那件事的人并肩来看。",
+              "scores": {
+                "relational": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "问馆方能否留一只展柜，展出我明天会做的事。",
+              "scores": {
+                "existentialist": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "错开导览时间，独自抄下那件展品的说明牌。",
+              "scores": {
+                "linguist": 3,
+                "remembrancer": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "所有空椅子突然能够说话。你家那把一直空着的椅子叫住了你。你如何应答？",
+          "options": [
+            {
+              "text": "录下椅腿摩擦地面的尾音，编入一首二重奏。",
+              "scores": {
+                "aesthetic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "问它有没有见过谁一直站着，即使本可坐下。",
+              "scores": {
+                "ethical": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "搬走椅背上的杂物，再问它要不要换个位置。",
+              "scores": {
+                "cynic": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "问它还记不记得最后一个坐在那里的人。",
+              "scores": {
+                "remembrancer": 3,
+                "absurdist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "某天午夜，门外有人递来一张出生退回单，邮费已由你未来的自己付清。你怎样处理？",
+          "options": [
+            {
+              "text": "拿退回单去补桌脚，明早还有饭要吃。",
+              "scores": {
+                "cynic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "填上「出生无误，投递地址存疑」，原样寄回。",
+              "scores": {
+                "absurdist": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "先陪等在楼道里的邮差坐一会儿，听他为何送这封信。",
+              "scores": {
+                "relational": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "问邮差，退件会让谁失去已经发生的人生。",
+              "scores": {
+                "ethical": 3,
+                "existentialist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "剧场里的每个观众都戴着你的脸，演员却拒绝上台。你买下唯一一张离场票后会做什么？",
+          "options": [
+            {
+              "text": "顺着一张张脸找，哪一张是我最早认得的。",
+              "scores": {
+                "remembrancer": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "把票交回，走上舞台说一句自己想说的话。",
+              "scores": {
+                "existentialist": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "把「离场」的围栏拆掉，看看票究竟允许我离开什么。",
+              "scores": {
+                "linguist": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "把票撕成纸雪，从二楼撒向空舞台。",
+              "scores": {
+                "aesthetic": 3,
+                "existentialist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "人人胸前都悬浮一条存在指数，只有你的数字越被注视越低。你怎么度过这一天？",
+          "options": [
+            {
+              "text": "问盯着数字的人，他们何时才把「看见」当成「了解」。",
+              "scores": {
+                "linguist": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "穿一件厚外套出门，省下给路人解释的力气。",
+              "scores": {
+                "cynic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "揭下全城的公开排行榜，承担破坏公物的罚单。",
+              "scores": {
+                "ethical": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "去做已经答应的事，让指数自己波动。",
+              "scores": {
+                "existentialist": 3,
+                "cynic": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "一位地质学家说，海底的石层里有一整条属于你的星期二。你只获准下潜一次。你想找什么？",
+          "options": [
+            {
+              "text": "想找同路人刻在石面上的最后一笔。",
+              "scores": {
+                "relational": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "想找透过石层的最后一线光，把颜色记下来。",
+              "scores": {
+                "aesthetic": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "想找过去我以为早就忘了的凹痕。",
+              "scores": {
+                "remembrancer": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "想找一块上面什么也没有、却被定为珍贵的石头。",
+              "scores": {
+                "absurdist": 3,
+                "relational": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "时间与记忆",
+      "reveal": "第二层纹路浮现。你走过的时间，有些沉进细节，有些仍在改变方向。",
+      "questions": [
+        {
+          "prompt": "钟表匠可以从你的过去剪下一分钟做成表带，它仍会每天重演。你怎样决定？",
+          "options": [
+            {
+              "text": "留一段平常晚饭的尾声，听餐具碰撞。",
+              "scores": {
+                "remembrancer": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "留一次临时改主意的瞬间，提醒自己还能再选。",
+              "scores": {
+                "existentialist": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "留一分钟迟到，在任何准点的场合重演。",
+              "scores": {
+                "absurdist": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "把表推回去，我更需要一只准时的钟。",
+              "scores": {
+                "cynic": 3,
+                "linguist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "你收到十年后的公共纪念碑拓片，上面把同一天写成你的荣耀和一个陌生人的灾难。你先做什么？",
+          "options": [
+            {
+              "text": "找这位陌生人，请他讲自己的版本。",
+              "scores": {
+                "relational": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "用同一块纸拓一遍背面，留下两面彼此穿透的墨色。",
+              "scores": {
+                "aesthetic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "发一份校勘，把「荣耀」和「灾难」放回各自的叙述里。",
+              "scores": {
+                "linguist": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "查那天我的收益是否来自对方承担的损失。",
+              "scores": {
+                "ethical": 3,
+                "relational": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "列车每经过一站，所有乘客就会忘掉同一个年份。到站之前，你有三十秒。你会做什么？",
+          "options": [
+            {
+              "text": "写下那一年的三个坐标，留给忘记之后的读者。",
+              "scores": {
+                "linguist": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "数着秒针，观察大家何时第一次穿过自己的空洞。",
+              "scores": {
+                "absurdist": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "问身边的人想主动留下哪一段，我可以一起记住。",
+              "scores": {
+                "relational": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "拉下紧急制动，接受可能耽误的所有行程。",
+              "scores": {
+                "existentialist": 3,
+                "relational": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "一张相纸能显露你目击却未留意的细节，但只能冲洗一次。你选择哪张底片？",
+          "options": [
+            {
+              "text": "那次我确信自己是公正旁观者的争执。",
+              "scores": {
+                "ethical": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "老家餐桌最后一顿饭里落向碗底的斜阳。",
+              "scores": {
+                "remembrancer": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "哪张都不挑，把冲洗时间留给今天正在发生的事。",
+              "scores": {
+                "cynic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "暴雨在空城尽头将落未落的一格。",
+              "scores": {
+                "aesthetic": 3,
+                "cynic": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "未来的人把你当成预言家，只因为你七岁时一本涂鸦刚好连续猜中五场灾难。接下来怎么办？",
+          "options": [
+            {
+              "text": "给下一张纸留白，题名《第六次准确预言》。",
+              "scores": {
+                "absurdist": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "把涂鸦卖给旧书摊，拒绝开办任何纪念馆。",
+              "scores": {
+                "cynic": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "公开原稿和全部猜错的地方，先制止恐慌。",
+              "scores": {
+                "ethical": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "找到还记得这本涂鸦的人，问当初为何一起画它。",
+              "scores": {
+                "relational": 3,
+                "remembrancer": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "旧房即将拆除，一间房可以原样移走。其余房间只剩你在墙上写的一行字。你怎样分配？",
+          "options": [
+            {
+              "text": "放弃搬运，在清空的位置给今天的自己画一条起跑线。",
+              "scores": {
+                "existentialist": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "把各个房间曾用过的名字并列写下，让后来者辨认。",
+              "scores": {
+                "linguist": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "搬走唯一朝西的房间，和夕阳约个新地址。",
+              "scores": {
+                "aesthetic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "搬走有门框身高刻痕的房间，给日子留个尺度。",
+              "scores": {
+                "remembrancer": 3,
+                "ethical": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "城里的日历每天会多出一个昨天。被你承认的那个版本将留存。你按什么原则选？",
+          "options": [
+            {
+              "text": "选保留必要约定的那个，其余让它自行翻过。",
+              "scores": {
+                "cynic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "选能保留被遮掩的那桩过错的版本。",
+              "scores": {
+                "ethical": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "选让我今天必须重新做决定的那个。",
+              "scores": {
+                "existentialist": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "先让两版各自说完，再比较它们口中的「昨天」。",
+              "scores": {
+                "linguist": 3,
+                "relational": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "雨每下三分钟，便洗掉一个人的一段怨恨。窗外雨声快满三分钟，那段事就要消失。你做什么？",
+          "options": [
+            {
+              "text": "把窗敞开，用接雨的浅盘留下那段静默的形状。",
+              "scores": {
+                "aesthetic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "打电话给一起受伤的人，问是否愿意在雨里同站片刻。",
+              "scores": {
+                "relational": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "抄下一件始终忘不掉的小事，留作边缘的水印。",
+              "scores": {
+                "remembrancer": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "看雨停又起，等自己试着对同一件事生两次相反的气。",
+              "scores": {
+                "absurdist": 3,
+                "linguist": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "自由与宿命",
+      "reveal": "第三层骨架浮现。那些无法选择的条件，正衬出你在哪里仍然拥有选择。",
+      "questions": [
+        {
+          "prompt": "港口每天只开一艘船。登船前，一张单程票会印上你抵岸后必定做的第一件事。你拿到票后怎样处理？",
+          "options": [
+            {
+              "text": "签名上船，到了对岸再决定那件事的做法。",
+              "scores": {
+                "existentialist": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "在码头宣布票上的事已预演完毕，请船照常开。",
+              "scores": {
+                "absurdist": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "截下起航时间，查有没有送货船载客。",
+              "scores": {
+                "cynic": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "退票，回去继续昨天与家人约好的事。",
+              "scores": {
+                "remembrancer": 3,
+                "relational": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "山坡上的每扇门都恰好通往一个人的命定职业。你被安排当守门人。第一天你做什么？",
+          "options": [
+            {
+              "text": "和第一个被关在门外的人聊聊，他愿意去哪一扇。",
+              "scores": {
+                "relational": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "给无名的门各画一幅景色，任人从图案挑起。",
+              "scores": {
+                "aesthetic": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "帮没有钥匙的人登记，给每个人一次自行开门的机会。",
+              "scores": {
+                "ethical": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "请来访者先说「职业」一词在他们家里是什么意思。",
+              "scores": {
+                "linguist": 3,
+                "existentialist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "一座桥会在你第七次经过时倒下。今天是第六次，桥对面工作的陌生人等着你赴约。你怎么做？",
+          "options": [
+            {
+              "text": "查第七次「经过」是否包括只走到桥心又退回。",
+              "scores": {
+                "linguist": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "告诉对方原委，请他和我一起改约到河这边。",
+              "scores": {
+                "relational": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "连夜找船，按约定时间到达，再去处理那座桥。",
+              "scores": {
+                "existentialist": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "退到桥头，问倒下的是桥，还是这个次数的说法。",
+              "scores": {
+                "absurdist": 3,
+                "linguist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "掷出的骰子会闪现你一周后最后悔的一件事。手里的骰子有人愿用一个月薪水买走。你怎么做？",
+          "options": [
+            {
+              "text": "卖掉骰子，把钱拿来买下一周可自由支配的时间。",
+              "scores": {
+                "cynic": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "辨认那件事是否会连累别人，再决定要不要掷。",
+              "scores": {
+                "ethical": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "把骰子存进行李箱，让寄来时的薄纸仍裹着它。",
+              "scores": {
+                "remembrancer": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "用透明盒把骰子封住，让它永远停在指尖刚放开的高度。",
+              "scores": {
+                "aesthetic": 3,
+                "absurdist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "一个陌生人把自己所有未使用的选择权都签给你。一张签名可以让饮水、婚姻或工作自动决定。你怎么办？",
+          "options": [
+            {
+              "text": "把所有签名贴在抽签桶外，唯一正确的结果是空桶。",
+              "scores": {
+                "absurdist": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "留几张代我选午饭，其余都过期作废。",
+              "scores": {
+                "cynic": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "约对方尝试一起做个无关紧要的小决定。",
+              "scores": {
+                "relational": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "把签好的纸逐张退还，陪对方查清是谁逼他签字。",
+              "scores": {
+                "ethical": 3,
+                "relational": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "午夜能从平行城市借用另一个你的一次决定。这里只告诉你结果，没有经过。你愿意借哪一种？",
+          "options": [
+            {
+              "text": "借一次重访童年故居的决定，再走一遍旧路。",
+              "scores": {
+                "remembrancer": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "先问「借用」是否需要把另一个人的选择还回去。",
+              "scores": {
+                "linguist": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "借一场十年完成一件小作品的决定，看看作品的样子。",
+              "scores": {
+                "aesthetic": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "借一个能让我立刻着手改变眼下局面的决定。",
+              "scores": {
+                "existentialist": 3,
+                "ethical": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "峡谷里有根绳索。只要你松手，另一端那个人的一生就会改道，但谁都看不到他是谁。你会怎么办？",
+          "options": [
+            {
+              "text": "握住绳索，直到有人能解释松手可能伤害谁。",
+              "scores": {
+                "ethical": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "选择自己愿意承担的一边，主动结束悬而未决。",
+              "scores": {
+                "existentialist": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "朝峡谷喊出规则，请另一端纠正我的理解。",
+              "scores": {
+                "linguist": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "找块石头压住绳，回去找附近能讲清装置的人。",
+              "scores": {
+                "cynic": 3,
+                "absurdist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "你到了一条赛道，终点早已刻好你的抵达时刻，连分毫都标得清楚。发令声起，你怎么跑？",
+          "options": [
+            {
+              "text": "留意身体移动时看台的明暗，每圈换一种节奏。",
+              "scores": {
+                "aesthetic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "在本该冲刺的拐弯，试走一遍幼时跑步的步法。",
+              "scores": {
+                "remembrancer": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "起跑后沿边跑，等时刻与我的脚步自相矛盾。",
+              "scores": {
+                "absurdist": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "找一名一直落单的跑者，商量是否同行一圈。",
+              "scores": {
+                "relational": 3,
+                "existentialist": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "他者与孤独",
+      "reveal": "第四层接缝浮现。靠近、退开和留下，都在刻画你与他人的距离。",
+      "questions": [
+        {
+          "prompt": "餐馆每天为一个一直缺席的人摆一套餐具。侍者说那人的名字恰好和你一样。你怎么做？",
+          "options": [
+            {
+              "text": "留下来问侍者，那个人坐这里时点过什么。",
+              "scores": {
+                "remembrancer": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "带一位同名者来，把三套餐具坐成一出戏。",
+              "scores": {
+                "absurdist": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "推过自己桌上的一碟菜，请侍者少洗一只盘子。",
+              "scores": {
+                "cynic": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "明晚照样订自己的桌位，亲手写预约名。",
+              "scores": {
+                "existentialist": 3,
+                "cynic": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "潜水钟下沉时只有一具耳机可用。你会听见岸上一个人的心思，对方可以自己决定说多少。你想听谁？",
+          "options": [
+            {
+              "text": "听检修员还在犹豫要不要写进报告的疑虑。",
+              "scores": {
+                "ethical": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "听调音师在沉默里辨认到了什么。",
+              "scores": {
+                "aesthetic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "听译员待在两种语言之间时的自言自语。",
+              "scores": {
+                "linguist": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "听曾与我同船而从未交谈过的人。",
+              "scores": {
+                "relational": 3,
+                "linguist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "孤岛提供一台传真机，可以每天收到外界一条误寄给别人的信息。你打算如何处理？",
+          "options": [
+            {
+              "text": "遇到应该有人接住的话，就把确认回执发出去。",
+              "scores": {
+                "relational": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "根据误寄的重复模式，想办法让发信人修正地址。",
+              "scores": {
+                "linguist": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "自定每周接收的一天，把剩下的时间留给岛上的事。",
+              "scores": {
+                "existentialist": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "把每张回执都署名「失踪的原收件人」，看会引来什么回音。",
+              "scores": {
+                "absurdist": 3,
+                "remembrancer": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "你遗失的手套被陌生人捡到。他寄回手套，还奉上一只自己的手套。你做什么？",
+          "options": [
+            {
+              "text": "把两只缝在一起，让两种磨损成为同一面的纹路。",
+              "scores": {
+                "aesthetic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "先问他是否还需要手套，确认怎样归还对他方便。",
+              "scores": {
+                "ethical": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "保存这两只，在以后路过邮戳上的小镇时去拜访。",
+              "scores": {
+                "remembrancer": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "把两只都戴上，哪怕颜色不搭也能保暖。",
+              "scores": {
+                "cynic": 3,
+                "linguist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "城里出现一间房，里面可以彻底独处，但房门须由另一个人替你扣上。你会怎么进去？",
+          "options": [
+            {
+              "text": "请管理员照常值班时帮个忙，无需举行告别。",
+              "scores": {
+                "cynic": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "找信任的人，事先商量什么时候回来敲门。",
+              "scores": {
+                "relational": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "邀请讨厌我的人来，他肯定懂我此刻多想清静。",
+              "scores": {
+                "absurdist": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "先核对从里面能否开门，再决定是否试用。",
+              "scores": {
+                "ethical": 3,
+                "linguist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "隔壁的陌生人每天隔墙吹一次口哨。第十天你发现，那面墙会把同一声口哨变成两个音高。你怎么做？",
+          "options": [
+            {
+              "text": "试着换一个音，确认那是信号、练习，还是问候。",
+              "scores": {
+                "linguist": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "转到楼道，敲门说明我想知道每天是谁在吹。",
+              "scores": {
+                "existentialist": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "回吹一小段，听旋律怎样在墙两边生长。",
+              "scores": {
+                "aesthetic": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "回吹第一天听过的曲调，留心走音的地方。",
+              "scores": {
+                "remembrancer": 3,
+                "aesthetic": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "集体肖像完工后，所有画中人都慢慢面朝你。唯一背对你的人现在可以改一次姿势。你怎么办？",
+          "options": [
+            {
+              "text": "在肖像边缘加一个自选站位，给自己转个身。",
+              "scores": {
+                "existentialist": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "留下背影，再把画挂在平时没人久站的楼梯上。",
+              "scores": {
+                "cynic": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "让那个人决定怎么站，其他视线由我承受。",
+              "scores": {
+                "ethical": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "问画家，背影什么时候被大家读成了拒绝。",
+              "scores": {
+                "linguist": 3,
+                "remembrancer": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "每人睡前可选择让另一个人同做一场梦。今晚起，一辈子只能选一次。你打算怎么用？",
+          "options": [
+            {
+              "text": "给城里最擅长解说梦的人，让他亲自走进一场无法解说的梦。",
+              "scores": {
+                "absurdist": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "选童年旧友，看看我们还能不能梦到同一条街。",
+              "scores": {
+                "remembrancer": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "选正在度过漫长夜班的人，给他一段共享的黎明。",
+              "scores": {
+                "relational": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "不发给具体的人，愿意拾到它的人可以接着做。",
+              "scores": {
+                "aesthetic": 3,
+                "remembrancer": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "语言与边界",
+      "reveal": "第五层边缘浮现。你倾向于替模糊的事命名，也可能给暂时说不清的事留出余地。",
+      "questions": [
+        {
+          "prompt": "政府规定「明天」一词只许再说一次。你手里有最后一张使用许可。你把这个词用在哪里？",
+          "options": [
+            {
+              "text": "对一只刚停摆的钟郑重地说。",
+              "scores": {
+                "absurdist": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "给词典录一条有具体上下文的口语例句。",
+              "scores": {
+                "linguist": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "写进一份自己此刻就能兑现的承诺。",
+              "scores": {
+                "existentialist": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "留着不花，把办手续的空当还给自己的下午。",
+              "scores": {
+                "cynic": 3,
+                "ethical": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "私人书信会在寄出后自行删掉一句。你知道规则，收信人并不知道。你会怎样写？",
+          "options": [
+            {
+              "text": "另附一页同样重要的事实，免得关键证词凭空消失。",
+              "scores": {
+                "ethical": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "重抄一遍对方当年写给我的开头，让他认出这封信。",
+              "scores": {
+                "remembrancer": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "把每段尾句写成可拆的节拍，少一句也有自己的韵律。",
+              "scores": {
+                "aesthetic": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "写上可见面的时间，预留当面补说的机会。",
+              "scores": {
+                "relational": 3,
+                "existentialist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "字典里「家」与「路」的词义对调了。第一天，人们纷纷照着新释义生活。你做什么？",
+          "options": [
+            {
+              "text": "沿着每天回家的路线走，想住哪里到傍晚再决定。",
+              "scores": {
+                "existentialist": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "给过路人发门牌号，邀请每段旅程登记为常住人口。",
+              "scores": {
+                "absurdist": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "去驿站接待还想去原来地址的人，听他们自己指路。",
+              "scores": {
+                "relational": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "给新版字典加脚注，解释哪几种用法还在流通。",
+              "scores": {
+                "linguist": 3,
+                "existentialist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "法庭只能受理用一个动词叙述的事件。一位受伤者请你帮忙选词。你先做什么？",
+          "options": [
+            {
+              "text": "画出动作起落的四格草图，让那个动词从完整画面里出现。",
+              "scores": {
+                "aesthetic": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "问他希望获得哪种实际补救，再挑能请求它的动词。",
+              "scores": {
+                "ethical": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "找负责受理的书记员，用实际案例试出可行写法。",
+              "scores": {
+                "cynic": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "从对方留下的日记里读出事情发生的次序。",
+              "scores": {
+                "remembrancer": 3,
+                "relational": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "语言学家发明了一个词，能令听者立即理解你想道歉的那件事，但说完就永远忘了对方。你怎么做？",
+          "options": [
+            {
+              "text": "去见对方，仍然用原来的句子慢慢道歉。",
+              "scores": {
+                "relational": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "把新词收回字典，把账当面结清。",
+              "scores": {
+                "cynic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "决定前先问对方是否愿意承担这次告别。",
+              "scores": {
+                "ethical": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "只对空房间说，验证它能不能令我忘掉一面墙。",
+              "scores": {
+                "absurdist": 3,
+                "linguist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "一座塔的每一层都能把你说的一句话译成更准确的版本，顶楼没有嘴也能发言。你在哪一层停？",
+          "options": [
+            {
+              "text": "停在第一处发现译文替我添加了意图的楼层。",
+              "scores": {
+                "linguist": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "走到顶楼，用手势感受没有口型的发言。",
+              "scores": {
+                "aesthetic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "停在还听得出熟人说话口音的最高一层。",
+              "scores": {
+                "remembrancer": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "停在需要我亲口选用哪个版本的楼层。",
+              "scores": {
+                "existentialist": 3,
+                "cynic": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "城市给每个人发了一枚句号，可以让一段公开争论立刻结束。你如何使用？",
+          "options": [
+            {
+              "text": "当作一枚旧硬币带着，等楼道没人吵时刚好垫门。",
+              "scores": {
+                "cynic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "把句号留给自己，在承认一次判断错误后结束发言。",
+              "scores": {
+                "existentialist": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "在双方能重述彼此的问题后，再问是否愿意落下句号。",
+              "scores": {
+                "linguist": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "用在有人被反复指名围攻时，先留出撤离通道。",
+              "scores": {
+                "ethical": 3,
+                "cynic": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "某国图书馆收录所有无人识得的词语。馆员说，最后一个词的发音需要四个人同时出声。你会选哪些人？",
+          "options": [
+            {
+              "text": "找记得几种旧口音的老人，试着拼回失散的读法。",
+              "scores": {
+                "remembrancer": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "找彼此等过消息的人，让四种声音合在一处。",
+              "scores": {
+                "relational": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "找四位彼此都认定其他三人读错的人，让他们迎着分歧读完。",
+              "scores": {
+                "absurdist": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "找拥有不同音域的歌者，听它最终成为哪种和弦。",
+              "scores": {
+                "aesthetic": 3,
+                "absurdist": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "道德与深渊",
+      "reveal": "第六层暗面浮现。到了必须付出代价的地方，你的取舍逐渐有了重量。",
+      "questions": [
+        {
+          "prompt": "审判日，一架秤能称出人做善事时的虚荣心。每次秤动，也必定毁掉那件善事留下的一个实际好处。你如何表决？",
+          "options": [
+            {
+              "text": "追问「虚荣」怎么从复杂动机里被单独划出来。",
+              "scores": {
+                "linguist": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "先统计有谁在靠那些好处过活，暂停开秤。",
+              "scores": {
+                "ethical": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "把自己的案件第一个送上秤，看规则能否执行到底。",
+              "scores": {
+                "existentialist": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "把秤送去市集称粮，先解决眼下的缺斤少两。",
+              "scores": {
+                "cynic": 3,
+                "aesthetic": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "城中将立一碑悼念一次失败的救援，刻字预算只够一句。你选什么？",
+          "options": [
+            {
+              "text": "刻下救援公示上那句「一切已按计划进行」。",
+              "scores": {
+                "absurdist": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "刻下家属最后同意留给路人的一句话。",
+              "scores": {
+                "relational": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "刻下一道断线及其余白，让晚来的脚步能够停留。",
+              "scores": {
+                "aesthetic": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "刻下那天当地报时钟停住的确切时分。",
+              "scores": {
+                "remembrancer": 3,
+                "ethical": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "有人能把每个人的歉意化为等值物品。你的邻居交来一箱过重的石头，请你搬走。你怎么做？",
+          "options": [
+            {
+              "text": "清出过道，提醒他搬法应让楼梯还能走人。",
+              "scores": {
+                "cynic": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "搬进广场，设一只牌子称它为「最沉默的解释」。",
+              "scores": {
+                "absurdist": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "列出受损者还缺的补偿，等这些需求先被接住。",
+              "scores": {
+                "ethical": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "约他一起把石头搬到楼下，再谈怎么回事。",
+              "scores": {
+                "relational": 3,
+                "existentialist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "一条街因你的决定得到了整夜通电，代价是另一条街忘掉当地一首歌。第二天议会让你把昨夜重过一次。你先做什么？",
+          "options": [
+            {
+              "text": "重新投票，签上我的名字，并承担替代方案的损失。",
+              "scores": {
+                "existentialist": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "照供电线路闪烁的间隔，做一版能用灯光传唱的谱。",
+              "scores": {
+                "aesthetic": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "去那条街问谁还记得歌词不见前唱到的地方。",
+              "scores": {
+                "remembrancer": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "问「忘掉」指唱不出，还是不能辨认彼此唱过它。",
+              "scores": {
+                "linguist": 3,
+                "ethical": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "一把伞能在暴雨里保护六人，只要握伞者愿意记住六人最不愿被提及的一件事。你拿到伞会怎样用？",
+          "options": [
+            {
+              "text": "先说清代价，只让愿意让我知道的人自己走近。",
+              "scores": {
+                "ethical": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "给每件事只留一个当事人同意的称呼，确认规则是否接受。",
+              "scores": {
+                "linguist": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "把伞靠在墙边，去找塑料布给候车点遮雨。",
+              "scores": {
+                "cynic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "握伞迈进雨里，亲自试能否把人逐个接到屋檐下。",
+              "scores": {
+                "existentialist": 3,
+                "cynic": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "全城必须选出一只动物，代人们承受每天最轻的一次不诚实。候选动物已列在公告栏。你怎么处理这张公告？",
+          "options": [
+            {
+              "text": "在每个动物名字旁画它原来的栖息地，贴回来供人看。",
+              "scores": {
+                "aesthetic": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "用背面抄下流传至今的、曾被承认为善意的谎话。",
+              "scores": {
+                "remembrancer": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "找到提案人，请他与每天负责饲养的人公开谈一次。",
+              "scores": {
+                "relational": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "把我的名字写在动物一栏，看看公告会不会自我撤回。",
+              "scores": {
+                "absurdist": 3,
+                "linguist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "你发现匿名捐助收据上印的每一笔善款，都能追到一个原本无意捐钱的人。你怎么处置收据？",
+          "options": [
+            {
+              "text": "和一位捐款现已帮到的人、一位被扣款的人一起看收据。",
+              "scores": {
+                "relational": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "把收据送回出具它的柜台，要求当面把账对一遍。",
+              "scores": {
+                "cynic": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "逐条区分票据上的「捐助」「代付」与「扣除」。",
+              "scores": {
+                "linguist": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "暂停后续扣款，查清每笔的同意记录和退回途径。",
+              "scores": {
+                "ethical": 3,
+                "existentialist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "大桥栏杆上可以刻下一件你愿让众人宽宥的事。刻完之后，所有人都将把那件事当作常事。你会怎样做？",
+          "options": [
+            {
+              "text": "留下受影响者愿意署名的经过，免得后来人只认识宽宥。",
+              "scores": {
+                "remembrancer": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "试刻自己愿公开承担的一件，并附下一步的修补动作。",
+              "scores": {
+                "existentialist": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "把「选择宽宥」四个字刻上去，等下一次刻字会如何发生。",
+              "scores": {
+                "absurdist": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "只刻它留下的形状，让路人感到重量后各自命名。",
+              "scores": {
+                "aesthetic": 3,
+                "remembrancer": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "审美与荒诞",
+      "reveal": "第七层裂纹浮现。你给不合常理的事留出的空间，开始带上自己的形状。",
+      "questions": [
+        {
+          "prompt": "美术馆每日举行一次闭馆仪式，只有一幅画获准在黑暗中发光。值班的你决定选哪幅？",
+          "options": [
+            {
+              "text": "选清洁工每次经过都会驻足的那幅，请他来开灯。",
+              "scores": {
+                "relational": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "选颜料最薄的那幅，看看光怎么从一层几乎没有的颜色里出来。",
+              "scores": {
+                "aesthetic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "选标着《闭馆中》的那幅，让整座馆在里面开着。",
+              "scores": {
+                "absurdist": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "就挑靠近出口的那幅，方便夜里走路。",
+              "scores": {
+                "cynic": 3,
+                "ethical": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "一支乐队演奏时，听众会看见自己失去过的一种颜色。你能要求他们加奏一次。你会怎样点？",
+          "options": [
+            {
+              "text": "把加奏权交给曾经被请出乐厅的人，让对方决定。",
+              "scores": {
+                "ethical": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "点一首从未上过节目单的曲子，愿意陪他们试奏。",
+              "scores": {
+                "existentialist": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "先请他们分别说出颜色与失去的关系，再按说法点。",
+              "scores": {
+                "linguist": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "点第一次见到那种颜色时街上正响着的曲子。",
+              "scores": {
+                "remembrancer": 3,
+                "aesthetic": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "雕塑展的作品每夜都交换自己的缺口。清晨你看见一尊整整齐齐的树，脚边掉下一块流泪的石头。你做什么？",
+          "options": [
+            {
+              "text": "把石头摆到树梢，让水滴落在照明里。",
+              "scores": {
+                "aesthetic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "把地擦干，给观众留一条安全的路。",
+              "scores": {
+                "cynic": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "查树昨夜是否从别的作品强行取走了完整。",
+              "scores": {
+                "ethical": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "铸一只等大的石头碗，专门接它省下的完整。",
+              "scores": {
+                "absurdist": 3,
+                "linguist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "一台机器生成全城公认的完美日落。你可以打断一次，灯灭后将看到当天真正的天色。你如何选时机？",
+          "options": [
+            {
+              "text": "在我每天下班的时分按下去，亲眼看一次。",
+              "scores": {
+                "existentialist": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "对照祖父记录过的日落时刻，在其中一格按下去。",
+              "scores": {
+                "remembrancer": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "约常在露台等人的邻居，一起说好一个时刻。",
+              "scores": {
+                "relational": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "等有人第一次把机器的产物叫作「故乡的天」，随即熄灯。",
+              "scores": {
+                "linguist": 3,
+                "remembrancer": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "所有雨伞撑开时都会随机播放一件主人的秘密。你的伞却只播放一首无法辨识的短曲。你怎么处理？",
+          "options": [
+            {
+              "text": "给伞挂上节目单，漏掉那首唯一的曲子。",
+              "scores": {
+                "absurdist": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "查清旋律里有没有别人的隐私，再决定能不能放给路人听。",
+              "scores": {
+                "ethical": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "给伞套一层隔音布，等天气晴了才送修。",
+              "scores": {
+                "cynic": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "每场雨录下一次，听细微的变调是否终会接成一首歌。",
+              "scores": {
+                "aesthetic": 3,
+                "absurdist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "剧院没有演员。只要成对买票，坐席之间会自动长出两人最后一次争执的布景。你怎样使用自己的票？",
+          "options": [
+            {
+              "text": "找一件那晚被我们忽略的布景细节，把它画在票根上。",
+              "scores": {
+                "remembrancer": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "两个人各给同一块布景起名，对照我们看到的差别。",
+              "scores": {
+                "linguist": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "带着愿意从今天开始采取的一个动作去，出门就执行。",
+              "scores": {
+                "existentialist": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "邀请当时没说完的人去，在散场后给对方补说的时间。",
+              "scores": {
+                "relational": 3,
+                "remembrancer": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "一台相机只拍得下城市中没人想留存的景物。胶卷剩一格，你会按在什么地方？",
+          "options": [
+            {
+              "text": "拍坏掉的路标，拿照片去报维修。",
+              "scores": {
+                "cynic": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "拍一整排拒绝参加合影的空白广告位。",
+              "scores": {
+                "absurdist": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "拍排风口旁被吹成镂空的一团灰。",
+              "scores": {
+                "aesthetic": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "拍曾被移走的无障碍坡道在地上的印子。",
+              "scores": {
+                "ethical": 3,
+                "remembrancer": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "某天全城的路灯都开始随行人步态改变亮度。只有凌晨一趟电车能载你旁观一整圈。你选哪节车厢？",
+          "options": [
+            {
+              "text": "选玻璃最清楚的一节，辨认哪种亮暗变化渐渐成了信号。",
+              "scores": {
+                "linguist": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "选司机的亲友平时常坐的靠前一节，问灯下有哪些熟客。",
+              "scores": {
+                "relational": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "选小时候同一路线经过学校时常坐的一节。",
+              "scores": {
+                "remembrancer": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "选可以自己决定何时下车的最后一节。",
+              "scores": {
+                "existentialist": 3,
+                "absurdist": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "终局与永恒",
+      "reveal": "第八层闭合。你在结束面前留下的东西，和你愿意放下的东西，都已进入档案。",
+      "questions": [
+        {
+          "prompt": "人生末尾有一间寄存处，保管员能让你带回世间一样已淘汰的小物。你挑什么？",
+          "options": [
+            {
+              "text": "挑有形状却没有准确刻度的漏沙器。",
+              "scores": {
+                "aesthetic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "挑寄存处自己的告示牌，请它用来宣布自身淘汰。",
+              "scores": {
+                "absurdist": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "挑一串再也打不开旧门的钥匙，归还给搬家的那个人。",
+              "scores": {
+                "remembrancer": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "挑一只还敲得响的饭盒，交给现在下夜班的人。",
+              "scores": {
+                "cynic": 3,
+                "ethical": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "如果地球的最后一条公开留言由你写，任何语言都只能译出其中一半。你打算怎样写？",
+          "options": [
+            {
+              "text": "写下常被掩去的一件事，并附可核查的姓名与日期。",
+              "scores": {
+                "ethical": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "用一句话写下我此刻自愿作出的决定。",
+              "scores": {
+                "existentialist": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "留下一句能让陌生人通过歌声相认的话。",
+              "scores": {
+                "relational": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "把意思用两个可各自成立的句子分别说一遍。",
+              "scores": {
+                "linguist": 3,
+                "existentialist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "一个观测站保存所有灭绝鸟类的最后一声鸣叫。深夜它向你索取一个声音来交换。你选哪个？",
+          "options": [
+            {
+              "text": "交出家中那扇少有人再启开的门的响动。",
+              "scores": {
+                "remembrancer": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "交出厨房定时器，一换到便备份录音交给档案馆。",
+              "scores": {
+                "cynic": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "交出削铅笔到笔尖将断时那一下回声。",
+              "scores": {
+                "aesthetic": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "交出收音机搜寻已停播电台时的噪声。",
+              "scores": {
+                "absurdist": 3,
+                "linguist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "有项技术能让你以固定年龄持续生活，代价是大家无法再和你约定具体日期。你接受前先确认什么？",
+          "options": [
+            {
+              "text": "确认「改天见」能否算一个有效约定。",
+              "scores": {
+                "linguist": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "确认紧急照料和共同责任还能怎么被落实。",
+              "scores": {
+                "ethical": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "确认我还能否单方面给自己设期限。",
+              "scores": {
+                "existentialist": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "找一个会和我生活很久的人，先尝试一周这种约法。",
+              "scores": {
+                "relational": 3,
+                "remembrancer": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "末日列车上有空位，但它只开到你最寻常的一天。你坐进车厢后，想在哪一站下？",
+          "options": [
+            {
+              "text": "在广播说列车此处绝不会停车的那一站。",
+              "scores": {
+                "absurdist": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "在从前有人等我放学的那一站。",
+              "scores": {
+                "remembrancer": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "在还能买到热饭、借到电话的那一站。",
+              "scores": {
+                "cynic": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "在光掠过连廊、把雨水染亮的那一站。",
+              "scores": {
+                "aesthetic": 3,
+                "cynic": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "一颗星即将熄灭，你可以替它决定最后一束光照向何处。你怎样定？",
+          "options": [
+            {
+              "text": "照向一个从来只能望见月光的窗口，陪里面的人看一回星光。",
+              "scores": {
+                "relational": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "把选择写成方位和视角，让下一人还可用别的坐标描述。",
+              "scores": {
+                "linguist": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "照向长期没有公共照明、仍有人归家的山路。",
+              "scores": {
+                "ethical": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "照向我愿意亲自抵达的一座山峰。",
+              "scores": {
+                "existentialist": 3,
+                "cynic": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "沙海里有一樽能存住任何东西的匣子，但每一千年只能有人打开一次。你打算留下什么？",
+          "options": [
+            {
+              "text": "一套当地材料也能照做的取水图。",
+              "scores": {
+                "cynic": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "一件内外在不同方向碎裂、同样可以站立的陶器。",
+              "scores": {
+                "aesthetic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "一把开匣时才会自动折断的钥匙。",
+              "scores": {
+                "absurdist": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "一组抄得下老口音和停顿的家书。",
+              "scores": {
+                "remembrancer": 3,
+                "linguist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "万物安静之前，你获准拨一通无铃声的电话。线路已经接通，你最想怎么结束这通电话？",
+          "options": [
+            {
+              "text": "说完我一直等自己决定的那句话，主动挂断。",
+              "scores": {
+                "existentialist": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "等另一边先开口，问能否陪对方待到线路自行中断。",
+              "scores": {
+                "relational": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "问清最后一句在对方耳中是什么意思，再复述一次。",
+              "scores": {
+                "linguist": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "把该由我扛下的过错说清，并告诉对方补救办法。",
+              "scores": {
+                "ethical": 3,
+                "existentialist": 1
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "factions": [
+    {
+      "id": "absurdist",
+      "name": "第七封印式荒诞观测者",
+      "quote": "结局没有解释，你还是把棋下完。",
+      "profile": "当秩序一本正经地露出裂缝，你会停下来多看一眼。你善于与未知保持距离，也愿意继续参与。谨慎留意，旁观得太久，有些本可改变的事会先一步结束。"
+    },
+    {
+      "id": "cynic",
+      "name": "第欧根尼式犬儒游荡者",
+      "quote": "你卸下体面的道具，手终于能做点有用的事。",
+      "profile": "你对繁复的仪式保持警惕，总想摸到生活坚硬而可用的部分。你擅长减轻负担，也容易太快离席。真正值得你认真对待的东西，有时同样需要一点仪式。"
+    },
+    {
+      "id": "linguist",
+      "name": "维特根斯坦式语言边界守望者",
+      "quote": "你追问一个词，是因为有人正被它困住。",
+      "profile": "你常在众人急于得出结论时停顿，辨认同一个词背后不同的生活。你的耐心能让误会有去处。也有时候，先给对方一个回应，词义才能在交谈里慢慢变得清楚。"
+    },
+    {
+      "id": "remembrancer",
+      "name": "记忆考古者",
+      "quote": "回不去的地方，仍然在改变你辨路的方式。",
+      "profile": "你能从用旧的物件和一句随口的话里辨认时间的纹路。你保存细节，也借此听见曾经被忽略的人。最难的一次整理，是允许旧事留在原处，并亲手改写今天。"
+    },
+    {
+      "id": "existentialist",
+      "name": "自由的签署者",
+      "quote": "你把名字写在决定下面，让以后有迹可循。",
+      "profile": "你愿意亲手决定下一步，也肯承受选择留下的重量。越是缺少确定的答案，你越会用行动划出一条路。仍有些事需要等人并肩，有力的决定也可以由两人一起作出。"
+    },
+    {
+      "id": "relational",
+      "name": "他者的渡口人",
+      "quote": "你用心听完一句话，给了沉默一个可以停靠的地方。",
+      "profile": "你习惯先看见具体的人和他们之间未被说出的距离。你会为重逢留门，也懂得陪伴可能只持续片刻。你同样有资格说明自己的期待，让对方也能向你走一步。"
+    },
+    {
+      "id": "ethical",
+      "name": "深渊持灯者",
+      "quote": "你点灯，先照的是那些被代价遮住的人。",
+      "profile": "你想弄清一个选择由谁受益、谁来承担它的重量。细小的损失也能改变你的判断。你擅长追查责任，有时更需要练习划出一段边界，让承担成为一件可持续的事。"
+    },
+    {
+      "id": "aesthetic",
+      "name": "残缺的造物者",
+      "quote": "你没有补平裂缝，你让光从那里落下。",
+      "profile": "你注意到断处的回响、磨痕里的变化和空白怎样移动人的目光。你能让难以开口的经历拥有可感的形状。有时候作品完成以后，最重要的事是回到那场对话。"
+    }
+  ]
+}

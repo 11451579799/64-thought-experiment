@@ -1,0 +1,3968 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111010">
+  <meta name="description" content="穿越 64 重思想切片，完成一份由你亲手写下的哲学人格侧写。">
+  <title>64 重思想实验 · 精神档案馆</title>
+  <style>:root {
+  color-scheme: dark;
+  --bg: #111010;
+  --paper: #eee4d1;
+  --muted: #aea293;
+  --brass: #d3bd90;
+  --rust: #b77159;
+  --line: #40372e;
+  --serif: "Noto Serif SC", "Songti SC", "STSong", "SimSun", Georgia, serif;
+  --sans: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", system-ui, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { background: var(--bg); }
+body { margin: 0; min-height: 100vh; min-height: 100dvh; color: var(--paper); background: radial-gradient(ellipse at 68% 23%, #221c18 0, transparent 55%), var(--bg); font: 15px/1.65 var(--sans); }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { font: inherit; color: inherit; cursor: pointer; }
+button:disabled { cursor: default; opacity: .55; }
+button:focus-visible, a:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--brass); outline-offset: 4px; }
+a { color: var(--brass); }
+h1, h2, h3, p, blockquote { margin: 0; }
+h1, h2, h3, blockquote { font-family: var(--serif); }
+svg { vertical-align: middle; }
+img { display: block; max-width: 100%; }
+.frame { position: relative; display: flex; flex-direction: column; width: min(100%, 1100px); min-height: 100vh; min-height: 100dvh; margin: 0 auto; padding: 0 max(26px, env(safe-area-inset-right)) 0 max(26px, env(safe-area-inset-left)); }
+.masthead, .footer { display: flex; justify-content: space-between; align-items: center; gap: 12px; color: var(--muted); }
+.masthead { min-height: 72px; padding-top: env(safe-area-inset-top, 0px); border-bottom: 1px solid var(--line); }
+.wordmark { display: flex; gap: 10px; align-items: center; color: var(--brass); font: 600 16px var(--serif); letter-spacing: .12em; }
+.masthead-side, .footer { font-size: 11px; letter-spacing: .15em; }
+.footer { min-height: 56px; padding-bottom: env(safe-area-inset-bottom, 0px); border-top: 1px solid var(--line); }
+#app { flex: 1; display: flex; flex-direction: column; }
+.kicker { color: var(--brass); font-size: 11px; font-weight: 600; letter-spacing: .19em; }
+.eyebrow-line { display: flex; align-items: center; gap: 11px; }
+.eyebrow-line::before { content: ""; display: block; width: 25px; height: 1px; background: var(--rust); }
+.hero { flex: 1; display: grid; grid-template-columns: .98fr 1.02fr; align-items: center; gap: 48px; padding: 44px 0 54px; }
+.hero h1 { margin: 17px 0 21px; font-weight: 650; font-size: clamp(42px, 5.7vw, 73px); line-height: 1.105; letter-spacing: -.055em; }
+.hero h1 em { color: var(--brass); font-style: normal; }
+.hero .lead { color: var(--muted); font-size: 14px; line-height: 1.9; max-width: 40em; }
+.hero .invocation { margin-top: 14px; font: 17px/1.75 var(--serif); color: var(--paper); }
+.art-orbit { display: grid; place-items: center; min-width: 0; position: relative; }
+.art-orbit > * { grid-area: 1 / 1; }
+.art-orbit::before { content: ""; grid-area: 1 / 1; width: 86%; aspect-ratio: 1; background: radial-gradient(circle, #9f644329, transparent 68%); pointer-events: none; }
+.hero-art { width: min(100%, 465px); margin: auto; }
+.hero-art svg { position: relative; }
+.facts { display: flex; flex-wrap: wrap; gap: 7px 16px; align-items: center; margin: 23px 0 16px; color: var(--muted); font-size: 12px; }
+.facts span + span::before { content: "·"; margin-right: 16px; color: var(--brass); }
+.btn { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 10px; padding: 10px 19px; border: 1px solid var(--line); background: #211b17; color: var(--paper); text-decoration: none; text-align: center; font-weight: 600; line-height: 1.35; transition: background .18s ease, border-color .18s ease, transform .18s ease; }
+.btn:hover { background: #31271e; border-color: #7e694e; }
+.btn:active { transform: translateY(1px); }
+.btn.primary { background: #d4bf93; border-color: #d4bf93; color: #201710; }
+.btn.primary:hover { background: #ead5ac; border-color: #ead5ac; }
+.action-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.hero .primary { min-width: 210px; justify-content: space-between; }
+.hint { color: var(--muted); font-size: 12px; line-height: 1.65; }
+.hero .hint { margin-top: 12px; }
+.quiz { flex: 1; display: grid; grid-template-columns: minmax(200px, .76fr) minmax(0, 1.24fr); align-items: center; gap: clamp(28px, 6vw, 78px); padding: 30px 0 39px; }
+.quiz-art { width: min(100%, 380px); margin: auto; }
+.quiz-stage { min-width: 0; }
+.progress-label { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin: 0 0 8px; }
+.progress-label strong { font-size: 12px; font-variant-numeric: tabular-nums; color: var(--brass); letter-spacing: .1em; }
+.segments { height: 4px; display: grid; grid-template-columns: repeat(8, 1fr); gap: 5px; margin-bottom: 25px; }
+.segment { background: #342a24; overflow: hidden; }
+.segment span { display: block; height: 100%; background: var(--brass); transition: width .25s ease; }
+.question { font-size: clamp(21px, 2.55vw, 31px); font-weight: 600; line-height: 1.45; }
+.question-index { margin-bottom: 7px; color: var(--muted); font-size: 11px; letter-spacing: .12em; }
+.options { display: grid; gap: 8px; margin-top: 18px; }
+.choice { display: grid; grid-template-columns: 19px 1fr; gap: 10px; text-align: left; align-items: baseline; width: 100%; min-height: 47px; padding: 10px 12px; border: 1px solid var(--line); background: #191614e0; font-size: 14px; line-height: 1.53; }
+.choice span:first-child { font-family: Georgia, serif; font-size: 13px; color: var(--brass); }
+.choice:hover, .choice.chosen { border-color: #9f8259; background: #33281e; }
+.quiz-meta { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 10px; }
+.text-btn { min-height: 44px; border: 0; padding: 6px 0; background: transparent; color: var(--muted); text-decoration: underline; text-underline-offset: 4px; font-size: 12px; }
+.text-btn:hover { color: var(--paper); }
+.reveal { padding: 14px 0; }
+.reveal h2 { font-weight: 600; font-size: clamp(28px, 4.2vw, 46px); line-height: 1.28; margin: 11px 0 12px; }
+.reveal p:not(.kicker) { font: 17px/1.75 var(--serif); color: var(--muted); margin-bottom: 22px; }
+.reveal .next-chapter { margin-top: -11px; font: 12px/1.6 var(--sans) !important; }
+.compute { flex: 1; display: grid; align-content: center; justify-items: center; text-align: center; padding: 24px 0 46px; min-height: 450px; }
+.compute svg { width: min(68vw, 330px); }
+.compute h1 { font-size: clamp(26px, 5vw, 39px); margin: 7px 0 4px; }
+.compute p { color: var(--muted); }
+.result { width: min(100%, 790px); margin: 0 auto; padding: 30px 0 40px; }
+.result-card { display: grid; grid-template-columns: 1fr minmax(170px, .62fr); align-items: center; gap: 21px; padding: 25px 27px; border: 1px solid #62513d; background: linear-gradient(145deg, #2b211a, #171312 65%); }
+.result-card h1 { font-size: clamp(33px, 5vw, 52px); font-weight: 650; line-height: 1.15; margin: 8px 0 11px; }
+.result-card blockquote { border-left: 1px solid var(--rust); padding-left: 11px; margin-bottom: 11px; color: var(--brass); font-size: 17px; line-height: 1.55; }
+.result-card .profile { color: var(--muted); font-size: 14px; }
+.result-actions { margin-top: 13px; }
+.premium { position: relative; margin-top: 30px; padding-top: 21px; border-top: 1px solid var(--line); }
+.premium-head { display: flex; justify-content: space-between; align-items: center; gap: 18px; }
+.premium h2 { font-size: clamp(26px, 4vw, 34px); font-weight: 600; }
+.seal { width: 72px; flex: none; }
+.seal svg { width: 100%; height: auto; }
+.modules { display: grid; gap: 8px; margin-top: 11px; }
+.module { padding: 14px 16px; background: #241c17bf; border: 1px solid var(--line); }
+.module h3 { font-size: 16px; font-weight: 600; line-height: 1.5; }
+.module p { color: var(--muted); margin-top: 6px; overflow-wrap: anywhere; }
+.locked-noise { overflow: hidden; height: 25px; filter: blur(3px); opacity: .6; user-select: none; white-space: nowrap; }
+.locked .module { background: #2f241b85; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.unlock-row { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; margin-top: 15px; }
+.archive { margin-top: 20px; padding: 15px; border: 1px solid var(--line); }
+.archive details { margin-top: 9px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+.archive summary { color: var(--brass); cursor: pointer; }
+.archive ol { padding-left: 22px; }
+.archive li { margin: 9px 0; }
+.archive li p { color: var(--muted); }
+.archive .action-row { margin-top: 11px; }
+.wall-list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-top: 11px; }
+.wall-list button { min-height: 43px; padding: 7px 5px; }
+.result-footer { margin-top: 12px; }
+.overlay { position: fixed; z-index: 10; inset: 0; display: grid; align-items: center; justify-items: center; padding: 17px; background: #080606d9; -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); overscroll-behavior: contain; }
+.sheet { position: relative; width: min(100%, 470px); max-height: 92vh; max-height: 92dvh; overflow: auto; overscroll-behavior: contain; padding: 22px; border: 1px solid #675540; background: #201914; }
+.sheet h2 { font-size: 26px; line-height: 1.3; margin: 4px 45px 9px 0; }
+.sheet .close { position: absolute; top: 9px; right: 10px; width: 44px; height: 44px; border: 0; background: transparent; font-size: 23px; color: var(--brass); }
+.sheet .hint { margin: 7px 0 12px; }
+.plan-list { display: grid; gap: 8px; }
+.plan { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 4px 10px; min-height: 70px; padding: 10px 12px; border: 1px solid var(--line); background: #191512; text-align: left; }
+.plan[aria-pressed="true"] { background: #3a2b20; border-color: var(--brass); }
+.plan strong { font-family: var(--serif); }
+.plan small { grid-column: 1 / 3; color: var(--muted); }
+.plan .price { font-size: 18px; color: var(--brass); }
+.checkout-action { width: 100%; margin-top: 12px; }
+.sheet .status { min-height: 1.5em; margin: 9px 0 0; font-size: 13px; color: var(--brass); }
+.preview-tools { margin-top: 9px; color: var(--muted); font-size: 12px; }
+.preview-tools summary { cursor: pointer; }
+.media { width: min(100%, 306px); margin: 7px auto; border: 1px solid #675540; -webkit-touch-callout: default; user-select: auto; }
+.sheet .standalone { margin: 10px 0 0; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+@media (max-width: 700px) {
+  .frame { padding-left: max(18px, env(safe-area-inset-left)); padding-right: max(18px, env(safe-area-inset-right)); }
+  .masthead { min-height: 57px; }
+  .footer { min-height: 43px; }
+  .hero { grid-template-columns: 1fr; gap: 11px; padding: 16px 0 27px; justify-items: center; align-content: center; }
+  .hero-art { grid-row: 1; width: min(60vw, 31vh, 255px); }
+  .hero-content { width: min(100%, 430px); }
+  .hero h1 { margin: 10px 0 10px; font-size: clamp(40px, 11vw, 54px); }
+  .hero .invocation { margin-top: 10px; font-size: 15px; }
+  .hero .lead { font-size: 13px; line-height: 1.75; }
+  .facts { margin: 15px 0 11px; }
+  .hero .primary { width: 100%; }
+  .quiz { display: flex; flex-direction: column; align-items: stretch; gap: 8px; padding: 7px 0 12px; }
+  .quiz-art { margin: 0 auto; width: min(38vw, 19vh, 161px); }
+  .quiz-stage { width: min(100%, 470px); margin: 0 auto; }
+  .progress-label { margin-bottom: 6px; }
+  .segments { margin-bottom: 13px; }
+  .options { margin-top: 13px; gap: 6px; }
+  .choice { padding: 8px 10px; min-height: 44px; }
+  .quiz-meta { margin-top: 2px; }
+  .result { padding-top: 16px; }
+  .result-card { grid-template-columns: 1fr; gap: 1px; padding: 15px 17px 19px; }
+  .result-art { grid-row: 1; width: min(52vw, 192px); margin: 0 auto; }
+  .overlay { align-items: end; padding: 9px 9px max(9px, env(safe-area-inset-bottom)); }
+  .sheet { padding: 16px; }
+}
+@media (max-width: 350px) {
+  .frame { padding-inline: 13px; }
+  .masthead-side { letter-spacing: 0; }
+  .choice { font-size: 13px; }
+  .facts { gap: 4px 8px; }
+  .facts span + span::before { margin-right: 8px; }
+}
+@media (max-width: 700px) and (max-height: 680px) {
+  .hero-art { width: min(51vw, 25vh, 210px); }
+  .quiz-art { width: min(34vw, 15vh, 135px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
+
+.sigil-astrolabe,
+.sigil-collapse,
+.sigil-wax {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.sigil-astrolabe {
+  overflow: visible;
+}
+
+.sigil-marker {
+  transition: fill 240ms ease, fill-opacity 240ms ease, stroke-opacity 320ms ease;
+}
+
+.sigil-marker.is-lit {
+  filter: drop-shadow(0 0 3px rgba(225, 184, 120, .34));
+}
+
+.sigil-texture {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 25;
+  opacity: .19;
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+
+.sigil-wax {
+  overflow: visible;
+  filter: drop-shadow(0 4px 8px rgba(6, 3, 4, .54));
+}
+
+.sigil-wax-piece {
+  transform-box: view-box;
+  transform-origin: 50% 50%;
+}
+
+.is-shattered .sigil-wax-piece {
+  animation: sigil-wax-shatter 760ms cubic-bezier(.2, .72, .3, 1) both;
+}
+
+@keyframes sigil-wax-shatter {
+  0%   { transform: translate(0, 0) rotate(0); opacity: 1; }
+  15%  { opacity: 1; }
+  100% { transform: translate(var(--wax-x), var(--wax-y)) rotate(var(--wax-r)); opacity: 0; }
+}
+
+.sigil-calc-rings,
+.sigil-calc-matrix,
+.sigil-calc-flare {
+  transform-box: view-box;
+  transform-origin: 50% 50%;
+}
+
+.sigil-calc-rings {
+  animation: sigil-calc-rings 4s ease-in-out both;
+}
+
+.sigil-calc-matrix {
+  animation: sigil-calc-spin 4s cubic-bezier(.3, .03, .45, 1) both;
+}
+
+.sigil-calc-node {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: sigil-calc-node 3400ms var(--calc-delay) ease-in-out both;
+}
+
+.sigil-calc-flare {
+  animation: sigil-calc-flare 4s ease-in-out both;
+}
+
+@keyframes sigil-calc-rings {
+  0%   { transform: scale(.84) rotate(-14deg); opacity: .22; }
+  45%  { transform: scale(1) rotate(18deg); opacity: .62; }
+  82%  { transform: scale(.54) rotate(88deg); opacity: .42; }
+  95%  { transform: scale(1.06) rotate(101deg); opacity: .24; }
+  100% { transform: scale(1.16) rotate(105deg); opacity: 0; }
+}
+
+@keyframes sigil-calc-spin {
+  0%   { transform: rotate(-25deg); }
+  50%  { transform: rotate(0deg); }
+  100% { transform: rotate(96deg); }
+}
+
+@keyframes sigil-calc-node {
+  0%   { transform: scale(.4); opacity: .16; }
+  27%  { transform: scale(1); opacity: .9; }
+  52%  { transform: scale(.78); opacity: .62; }
+  100% { transform: translate(var(--calc-x), var(--calc-y)) scale(.06); opacity: 0; }
+}
+
+@keyframes sigil-calc-flare {
+  0%, 69% { transform: scale(.08); opacity: 0; }
+  87%     { transform: scale(.65); opacity: .94; }
+  100%    { transform: scale(.35); opacity: .52; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sigil-marker {
+    transition: none;
+  }
+
+  .is-shattered .sigil-wax-piece {
+    animation: none;
+    opacity: 0;
+  }
+
+  .sigil-calc-rings,
+  .sigil-calc-matrix,
+  .sigil-calc-node,
+  .sigil-calc-flare {
+    animation: none;
+  }
+
+  .sigil-calc-rings,
+  .sigil-calc-matrix {
+    opacity: .38;
+  }
+
+  .sigil-calc-flare {
+    transform: scale(.35);
+    opacity: .55;
+  }
+}
+</style>
+</head>
+<body>
+  <noscript>这项思想实验需要启用 JavaScript。</noscript>
+  <div id="texture" aria-hidden="true"></div>
+  <div class="frame">
+    <header class="masthead">
+      <div class="wordmark">
+        <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="13" stroke="currentColor" stroke-opacity=".6"/><path d="M16 1v30M1 16h30m-15-8 8 8-8 8-8-8z" stroke="currentColor"/><circle cx="16" cy="16" r="2" fill="currentColor"/></svg>
+        <span>精神档案馆</span>
+      </div>
+      <span class="masthead-side" id="masthead-side">思想实验 · 64</span>
+    </header>
+    <main id="app"></main>
+    <footer class="footer">
+      <span>64 重思想实验</span>
+      <span>哲学娱乐向侧写</span>
+    </footer>
+  </div>
+  <div class="overlay" id="overlay" hidden>
+    <section class="sheet" role="dialog" aria-modal="true" aria-labelledby="dialog-title" tabindex="-1" id="sheet"></section>
+  </div>
+  <div class="sr-only" aria-live="polite" id="announcer"></div>
+  <script>
+(function () {
+  "use strict";
+
+  var TAU = Math.PI * 2;
+  var CENTER = 240;
+  var CREAM = "#f2e1ba";
+  var BRASS = "#cbb78a";
+  var RUST = "#b76a51";
+  var SERIF = '"Noto Serif SC","Songti SC","STSong","SimSun",serif';
+  var SANS = '"PingFang SC","Microsoft YaHei",sans-serif';
+  var sigil;
+  var nextId = 0;
+
+  function clamp(value, low, high) {
+    return Math.min(high, Math.max(low, value));
+  }
+
+  function point(radius, theta) {
+    return [
+      (CENTER + radius * Math.sin(theta)).toFixed(2),
+      (CENTER - radius * Math.cos(theta)).toFixed(2)
+    ].join(" ");
+  }
+
+  function glyph(index, phase, variant) {
+    var sector = Math.floor(index / 8);
+    var slot = index % 8;
+    var angle = TAU * (sector * 8.6 + slot + 0.8) / 68.8;
+    var axis = phase * Math.PI / 8 + variant * TAU / 64;
+    var wave = Math.cos(8 * (angle + axis / 4));
+    var radius = 182 + (Math.min(phase, 4) * 3.4) * wave;
+    var width = 0.016 + (0.006 * (1 + Math.sin(phase + angle * 4)));
+    var height = 10 + 7 * Math.cos(phase * 0.55 + slot * Math.PI / 7);
+    return "M" + point(radius + height, angle + 0.015 * Math.sin(axis)) +
+      " L" + point(radius, angle + width) +
+      " L" + point(radius - height, angle - 0.012 * Math.sin(axis)) +
+      " L" + point(radius, angle - width) + " Z";
+  }
+
+  function weave(phase, variant, offset) {
+    var points = [];
+    var angle = phase * TAU / 32 + variant * TAU / 64 + offset;
+    var high = 148 - 19 * (0.5 + 0.5 * Math.sin(phase * 0.8 + variant * 0.3));
+    var low = 66 + 38 * (0.5 + 0.5 * Math.cos(phase * 0.9 + variant * 0.4));
+    for (var i = 0; i < 16; i += 1) {
+      points.push(point(i % 2 ? low : high, angle + i * TAU / 16));
+    }
+    return "M" + points.join(" L") + " Z";
+  }
+
+  function thread(phase, variant, inner) {
+    var lines = [];
+    var rotation = phase * TAU / 30 + variant * TAU / 64;
+    var reach = inner ? 66 : 122;
+    var span = inner ? 2.5 : 3.35;
+    for (var i = 0; i < 8; i += 1) {
+      var angle = rotation + i * TAU / 8;
+      lines.push("M" + point(reach, angle) + " Q" +
+        point(10 + 4 * phase, angle + span / 2) + " " +
+        point(reach, angle + span));
+    }
+    return lines.join(" ");
+  }
+
+  function rings() {
+    var ticks = [];
+    for (var i = 0; i < 8; i += 1) {
+      var angle = i * TAU / 8;
+      ticks.push(
+        '<line x1="' + point(214, angle).replace(" ", '" y1="') +
+        '" x2="' + point(225, angle).replace(" ", '" y2="') +
+        '" stroke-width="' + (i % 2 ? 1 : 1.8) + '"/>'
+      );
+    }
+    return '<g fill="none" stroke="' + BRASS + '" opacity=".42">' +
+      '<circle cx="240" cy="240" r="216" stroke-width=".65"/>' +
+      '<circle cx="240" cy="240" r="208" stroke-width="1"/>' +
+      '<circle cx="240" cy="240" r="200" stroke-width=".6" stroke-dasharray="1 6"/>' +
+      '<circle cx="240" cy="240" r="156" stroke-width=".65" opacity=".65"/>' +
+      ticks.join("") + '</g>';
+  }
+
+  function markers(answered, phase, variant) {
+    var nodes = [];
+    for (var i = 0; i < 64; i += 1) {
+      var lit = i < answered;
+      nodes.push('<path data-sigil-node="' + (i + 1) +
+        '" class="sigil-marker' + (lit ? ' is-lit' : '') +
+        '" d="' + glyph(i, phase, variant) +
+        '" fill="' + (lit ? (i % 8 === 7 ? CREAM : BRASS) : "transparent") +
+        '" fill-opacity="' + (lit ? "0.86" : "0") +
+        '" stroke="' + (lit ? CREAM : BRASS) +
+        '" stroke-opacity="' + (lit ? "0.9" : "0.32") + '" stroke-width=".75"/>');
+    }
+    return nodes.join("");
+  }
+
+  function badge(answered, variant) {
+    var count = answered === undefined ? 64 : Math.trunc(clamp(Number(answered) || 0, 0, 64));
+    var index = Math.trunc(clamp(Number(variant) || 0, 0, 7));
+    var phase = Math.floor(count / 8);
+    var id = "sigil-halo-" + (++nextId);
+    return '<svg class="sigil-astrolabe" xmlns="http://www.w3.org/2000/svg" ' +
+      'viewBox="0 0 480 480" width="480" height="480" fill="none" aria-hidden="true">' +
+      '<defs><radialGradient id="' + id + '"><stop offset="0" stop-color="#735441" stop-opacity=".31"/>' +
+      '<stop offset=".63" stop-color="#503729" stop-opacity=".14"/>' +
+      '<stop offset="1" stop-color="#503729" stop-opacity="0"/></radialGradient></defs>' +
+      '<circle cx="240" cy="240" r="228" fill="url(#' + id + ')"/>' + rings() +
+      '<path data-weave="outer" d="' + weave(phase, index, 0) + '" stroke="' + BRASS +
+      '" stroke-width=".85" stroke-opacity=".54"/>' +
+      '<path data-weave="inner" d="' + weave(phase, index, TAU / 16) + '" stroke="' + RUST +
+      '" stroke-width=".8" stroke-opacity=".62"/>' +
+      '<path data-thread="outer" d="' + thread(phase, index, false) + '" stroke="' + BRASS +
+      '" stroke-width=".5" stroke-opacity=".48"/>' +
+      '<path data-thread="inner" d="' + thread(phase, index, true) + '" stroke="' + BRASS +
+      '" stroke-width=".7" stroke-opacity=".54"/>' +
+      '<g data-pivot="center" class="sigil-pivot" transform="rotate(' + (phase * 22.5 + index * 11.25) + ' 240 240)">' +
+      '<circle cx="240" cy="240" r="30" stroke="' + BRASS + '" stroke-opacity=".7" stroke-width=".75"/>' +
+      '<circle cx="240" cy="240" r="36" stroke="' + BRASS + '" stroke-opacity=".38" stroke-width=".7" stroke-dasharray="1 5"/>' +
+      '<path d="M240 198 247 233 282 240 247 247 240 282 233 247 198 240 233 233Z" ' +
+      'fill="#473025" fill-opacity=".76" stroke="' + BRASS + '" stroke-width=".9"/>' +
+      '<path d="M240 222 258 240 240 258 222 240Z" fill="' + RUST +
+      '" fill-opacity=".53" stroke="' + CREAM + '" stroke-width=".8"/>' +
+      '<circle cx="240" cy="240" r="3" fill="' + CREAM + '"/></g>' +
+      markers(count, phase, index) + '</svg>';
+  }
+
+  function drawMorph(state, phase) {
+    state.phase = phase;
+    state.markers.forEach(function (marker, index) {
+      marker.setAttribute("d", glyph(index, phase, 0));
+    });
+    state.weaveOuter.setAttribute("d", weave(phase, 0, 0));
+    state.weaveInner.setAttribute("d", weave(phase, 0, TAU / 16));
+    state.threadOuter.setAttribute("d", thread(phase, 0, false));
+    state.threadInner.setAttribute("d", thread(phase, 0, true));
+    state.pivot.setAttribute("transform", "rotate(" + phase * 22.5 + " 240 240)");
+  }
+
+  function mount(container) {
+    if (sigil && sigil.container === container && container.contains(sigil.svg)) {
+      return sigil.svg;
+    }
+    if (sigil) {
+      window.cancelAnimationFrame(sigil.frame);
+    }
+    container.innerHTML = badge(0, 0);
+    var svg = container.firstElementChild;
+    sigil = {
+      container: container,
+      svg: svg,
+      markers: Array.prototype.slice.call(svg.querySelectorAll("[data-sigil-node]")),
+      weaveOuter: svg.querySelector('[data-weave="outer"]'),
+      weaveInner: svg.querySelector('[data-weave="inner"]'),
+      threadOuter: svg.querySelector('[data-thread="outer"]'),
+      threadInner: svg.querySelector('[data-thread="inner"]'),
+      pivot: svg.querySelector('[data-pivot]'),
+      count: null,
+      phase: 0,
+      target: 0,
+      frame: 0
+    };
+    return svg;
+  }
+
+  function update(answered) {
+    if (!sigil) {
+      return;
+    }
+    var state = sigil;
+    var count = Math.trunc(clamp(Number(answered) || 0, 0, 64));
+    var previous = state.count;
+    state.count = count;
+    state.markers.forEach(function (marker, index) {
+      var lit = index < count;
+      if (marker.classList.contains("is-lit") === lit) {
+        return;
+      }
+      marker.classList.toggle("is-lit", lit);
+      marker.setAttribute("fill", lit ? (index % 8 === 7 ? CREAM : BRASS) : "transparent");
+      marker.setAttribute("fill-opacity", lit ? ".86" : "0");
+      marker.setAttribute("stroke", lit ? CREAM : BRASS);
+      marker.setAttribute("stroke-opacity", lit ? ".9" : ".32");
+    });
+    var target = Math.floor(count / 8);
+    if (target === state.target) {
+      return;
+    }
+    state.target = target;
+    window.cancelAnimationFrame(state.frame);
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (previous === null || reduced) {
+      drawMorph(state, target);
+      return;
+    }
+    var from = state.phase;
+    var start;
+    function animate(now) {
+      if (start === undefined) {
+        start = now;
+      }
+      var progress = Math.min((now - start) / 880, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      drawMorph(state, from + (target - from) * eased);
+      if (progress < 1) {
+        state.frame = window.requestAnimationFrame(animate);
+      }
+    }
+    state.frame = window.requestAnimationFrame(animate);
+  }
+
+  function texture() {
+    var id = "sigil-grain-" + (++nextId);
+    return '<svg class="sigil-texture" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 740" preserveAspectRatio="none" aria-hidden="true">' +
+      '<defs><filter id="' + id + '" x="0" y="0" width="100%" height="100%">' +
+      '<feTurbulence type="fractalNoise" baseFrequency=".67" numOctaves="3" seed="23" stitchTiles="stitch"/>' +
+      '<feColorMatrix type="saturate" values="0"/></filter></defs>' +
+      '<rect width="420" height="740" filter="url(#' + id + ')"/></svg>';
+  }
+
+  function wax() {
+    var id = "sigil-wax-" + (++nextId);
+    var pieces = [
+      ["M49 46 44 25 53 0H99L96 29 77 40Z", 18, -24, 24],
+      ["M49 46 77 40 96 29 99 82 70 65 60 61Z", 32, 0, 52],
+      ["M49 46 60 61 70 65 99 82V99H31L37 72Z", 12, 30, -33],
+      ["M49 46 37 72 31 99H0V48L24 51Z", -28, 23, 36],
+      ["M49 46 24 51 0 48V0H53L44 25Z", -30, -18, -45]
+    ];
+    var plate = '<path d="M49 7C58 5 63 11 71 12Q81 14 85 25C96 28 91 42 93 48' +
+      'Q95 57 89 63C90 76 78 80 72 84Q63 96 53 91C42 94 39 88 32 87' +
+      'Q17 89 13 75C3 69 10 59 7 52Q2 41 10 34C7 23 22 19 27 14Q34 5 49 7Z" ' +
+      'fill="url(#' + id + '-red)" stroke="#c67858" stroke-width=".8"/>' +
+      '<circle cx="50" cy="49" r="32" fill="none" stroke="#31171a" stroke-width="2.5"/>' +
+      '<circle cx="50" cy="49" r="28" fill="none" stroke="#c47f61" stroke-opacity=".58"/>' +
+      '<path d="M39 45V42A11 11 0 0 1 61 42V45M38 45H62V64H38ZM50 52V57" ' +
+      'fill="none" stroke="#eac393" stroke-opacity=".9" stroke-width="1.7" stroke-linejoin="round"/>';
+    var definitions = pieces.map(function (piece, index) {
+      return '<clipPath id="' + id + '-' + index + '"><path d="' + piece[0] + '"/></clipPath>';
+    }).join("");
+    var fragments = pieces.map(function (piece, index) {
+      return '<g class="sigil-wax-piece" style="--wax-x:' + piece[1] + 'px;--wax-y:' +
+        piece[2] + 'px;--wax-r:' + piece[3] + 'deg" clip-path="url(#' + id + '-' + index +
+        ')">' + plate + '</g>';
+    }).join("");
+    return '<svg class="sigil-wax" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true">' +
+      '<defs><radialGradient id="' + id + '-red" cx=".36" cy=".22" r=".82">' +
+      '<stop stop-color="#ab573c"/><stop offset=".62" stop-color="#763028"/>' +
+      '<stop offset="1" stop-color="#492020"/></radialGradient>' + definitions + '</defs>' +
+      fragments + '</svg>';
+  }
+
+  function collapse() {
+    var nodes = [];
+    for (var row = -3; row <= 4; row += 1) {
+      for (var column = -3; column <= 4; column += 1) {
+        var index = (row + 3) * 8 + column + 3;
+        var x = (column - 0.5) * 26;
+        var y = (row - 0.5) * 26;
+        nodes.push('<rect class="sigil-calc-node" x="' + (236 + x) + '" y="' + (236 + y) +
+          '" width="8" height="8" style="--calc-x:' + (-x) + 'px;--calc-y:' + (-y) +
+          'px;--calc-delay:' + ((index * 17) % 460) + 'ms" fill="' + (index % 9 === 0 ? RUST : BRASS) + '"/>');
+      }
+    }
+    return '<svg class="sigil-collapse" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" aria-hidden="true">' +
+      '<g class="sigil-calc-rings" fill="none" stroke="' + BRASS + '">' +
+      '<circle cx="240" cy="240" r="145" stroke-width="1" stroke-dasharray="1 8"/>' +
+      '<circle cx="240" cy="240" r="172" stroke-width=".65"/>' +
+      '<rect x="120" y="120" width="240" height="240" stroke-width=".65" transform="rotate(45 240 240)"/></g>' +
+      '<g class="sigil-calc-matrix">' + nodes.join("") + '</g>' +
+      '<path class="sigil-calc-flare" d="M240 155 250 230 325 240 250 250 240 325 230 250 155 240 230 230Z" ' +
+      'fill="' + CREAM + '"/></svg>';
+  }
+
+  function svgImage(markup) {
+    return new Promise(function (resolve, reject) {
+      var source = new Image();
+      source.onload = function () { resolve(source); };
+      source.onerror = function () { reject(new Error("图腾图像生成失败")); };
+      source.src = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(markup);
+    });
+  }
+
+  function line(context, x1, y1, x2, y2) {
+    context.beginPath();
+    context.moveTo(x1, y1);
+    context.lineTo(x2, y2);
+    context.stroke();
+  }
+
+  function ornament(context, x, y, radius) {
+    context.beginPath();
+    context.moveTo(x, y - radius);
+    context.lineTo(x + radius, y);
+    context.lineTo(x, y + radius);
+    context.lineTo(x - radius, y);
+    context.closePath();
+    context.fill();
+  }
+
+  function wrap(context, content, width) {
+    var lines = [];
+    var current = "";
+    Array.from(content).forEach(function (character) {
+      var closing = /[，。！？；：、）”’》]/u.test(character);
+      if (current && !closing && context.measureText(current + character).width > width) {
+        lines.push(current);
+        current = character;
+      } else {
+        current += character;
+      }
+    });
+    if (current) {
+      lines.push(current);
+    }
+    return lines;
+  }
+
+  function write(context, content, y, size, color, width, family) {
+    context.font = size + "px " + (family || SERIF);
+    context.fillStyle = color;
+    var lines = wrap(context, content, width);
+    lines.forEach(function (entry, index) {
+      context.fillText(entry, 540, y + index * size * 1.46);
+    });
+    return y + lines.length * size * 1.46;
+  }
+
+  function canvasArtwork(data, wallpaperIndex) {
+    var wallpaperMode = wallpaperIndex !== undefined;
+    var variant = Number(data.variant) || 0;
+    var index = wallpaperMode ? Math.trunc(clamp(Number(wallpaperIndex) || 0, 0, 7)) : 0;
+    var badgeVariant = wallpaperMode ? (variant + index) % 8 : variant;
+    return svgImage(badge(64, badgeVariant)).then(function (source) {
+      var canvas = document.createElement("canvas");
+      canvas.hidden = true;
+      canvas.width = 1080;
+      canvas.height = wallpaperMode ? 1920 : 1620;
+      document.body.appendChild(canvas);
+      try {
+        var context = canvas.getContext("2d");
+        if (!context) {
+          throw new Error("当前浏览器无法绘制图像");
+        }
+        var height = canvas.height;
+        var gradient = context.createRadialGradient(540, height * 0.42, 12, 540, height * 0.42, 1030);
+        gradient.addColorStop(0, wallpaperMode && index % 2 ? "#252127" : "#2a1d19");
+        gradient.addColorStop(0.57, "#171211");
+        gradient.addColorStop(1, "#0e0c0c");
+        context.fillStyle = gradient;
+        context.fillRect(0, 0, 1080, height);
+        context.strokeStyle = "#b49b6b";
+        context.lineWidth = 1;
+        context.strokeRect(50, 50, 980, height - 100);
+        context.strokeStyle = "#625340";
+        context.strokeRect(62, 62, 956, height - 124);
+        context.fillStyle = BRASS;
+        ornament(context, 50, 50, 4);
+        ornament(context, 1030, 50, 4);
+        ornament(context, 50, height - 50, 4);
+        ornament(context, 1030, height - 50, 4);
+        context.textAlign = "center";
+        context.textBaseline = "middle";
+        if (wallpaperMode) {
+          write(context, "64 重思想实验", 290, 31, BRASS, 850);
+          context.drawImage(source, 115, 468, 850, 850);
+          write(context, data.name, 1440, 52, CREAM, 846);
+          write(context, data.quote, 1524, 33, BRASS, 810);
+          write(context, "· " + data.id + " · " + String(index + 1).padStart(2, "0") + " / 08", 1738, 25, BRASS, 850, SANS);
+        } else {
+          write(context, "64 重思想实验", 132, 32, BRASS, 846);
+          write(context, "精神档案  /  " + data.id, 190, 23, BRASS, 846, SANS);
+          context.drawImage(source, 204, 236, 672, 672);
+          context.strokeStyle = "#806b50";
+          line(context, 136, 940, 510, 940);
+          line(context, 570, 940, 944, 940);
+          context.fillStyle = BRASS;
+          ornament(context, 540, 940, 7);
+          var nameSize = Math.min(62, Math.floor(844 / Math.max(1, Array.from(data.name).length)));
+          var quoteY = write(context, data.name, 1018, nameSize, CREAM, 850) + 28;
+          var profileY = write(context, data.quote, quoteY, 37, BRASS, 820) + 40;
+          write(context, data.profile, profileY, 32, "#ddd0ba", 800);
+          var entryLabel = data.entryLabel && data.entryLabel.length <= 72 ? data.entryLabel : "灵 魂 侧 写";
+          write(context, entryLabel, 1505, 23, BRASS, 850, data.entryLabel ? SANS : SERIF);
+        }
+        return canvas.toDataURL("image/png");
+      } finally {
+        document.body.removeChild(canvas);
+      }
+    });
+  }
+
+  window.Sigil = {
+    mount: mount,
+    update: update,
+    badge: badge,
+    texture: texture,
+    wax: wax,
+    collapse: collapse,
+    poster: function (data) { return canvasArtwork(data); },
+    wallpaper: function (data, index) { return canvasArtwork(data, index === undefined ? 0 : index); }
+  };
+})();
+
+(function (global) {
+  'use strict';
+
+  const PLANS = Object.freeze({decode: 990, archive: 1990});
+  const TOKEN_KEY = 'unlock_token';
+  const PENDING_KEY = 'sixty_four_pending_orders';
+  const PROFILE_ID = /^[A-Za-z0-9_-]{1,96}$/;
+  const FACTION_ID = /^[a-z0-9_-]{1,64}$/;
+  const ORDER_ID = /^[A-Za-z0-9_-]{1,128}$/;
+  const LOOPBACK = ['localhost', '127.0.0.1', '[::1]'];
+  const POLL_DELAYS = [0, 1100, 1900, 2800, 4300, 6100];
+
+  class PaymentError extends Error {
+    constructor(message) {
+      super(message);
+    }
+  }
+
+  function validContext(context) {
+    return context && typeof context.profileId === 'string' && PROFILE_ID.test(context.profileId) &&
+      typeof context.factionId === 'string' && FACTION_ID.test(context.factionId);
+  }
+
+  function validPlan(plan) {
+    return typeof plan === 'string' && Object.prototype.hasOwnProperty.call(PLANS, plan);
+  }
+
+  function includesPlan(owned, requested) {
+    return owned === 'archive' || owned === requested;
+  }
+
+  function randomId() {
+    const bytes = global.crypto.getRandomValues(new Uint8Array(16));
+    return Array.from(bytes, byte => byte.toString(16).padStart(2, '0')).join('');
+  }
+
+  function validServerToken(token) {
+    return typeof token === 'string' && token.length >= 20 && token.length <= 4096 &&
+      !token.startsWith('preview-') && /^[A-Za-z0-9._~+\/=-]+$/.test(token);
+  }
+
+  function validatePayload(content, plan) {
+    const nonempty = value => typeof value === 'string' && value.trim().length > 0;
+    if (!content || !Array.isArray(content.modules) || content.modules.length !== 3 ||
+        !content.modules.every(nonempty)) {
+      throw new PaymentError('档案格式异常，请重新核验。');
+    }
+    if (plan === 'decode') return {modules: content.modules};
+    if (!Array.isArray(content.slices) || content.slices.length !== 64 || !content.slices.every(nonempty)) {
+      throw new PaymentError('完整档案尚未准备好，请重新核验。');
+    }
+    return {modules: content.modules, slices: content.slices};
+  }
+
+  function base64Bytes(value, limit) {
+    if (typeof value !== 'string' || value.length > limit ||
+        !/^[A-Za-z0-9+/]+={0,2}$/.test(value)) {
+      throw new PaymentError('档案密文格式异常，请重新核验。');
+    }
+    return Uint8Array.from(global.atob(value), character => character.charCodeAt(0));
+  }
+
+  async function decryptPayload(envelope, context, plan) {
+    if (!envelope || envelope.alg !== 'A256GCM' || !global.crypto || !global.crypto.subtle) {
+      throw new PaymentError('此浏览器无法读取加密档案，请在支持安全连接的浏览器中重试。');
+    }
+    try {
+      const rawKey = base64Bytes(envelope.key, 48);
+      const iv = base64Bytes(envelope.iv, 24);
+      const ciphertext = base64Bytes(envelope.ciphertext, 1400000);
+      if (rawKey.length !== 32 || iv.length !== 12 || ciphertext.length <= 16) {
+        throw new Error('Invalid envelope length');
+      }
+      const key = await global.crypto.subtle.importKey('raw', rawKey, 'AES-GCM', false, ['decrypt']);
+      const additionalData = new TextEncoder().encode(context.profileId + '|' + context.factionId + '|' + plan);
+      const plaintext = await global.crypto.subtle.decrypt(
+        {name: 'AES-GCM', iv, additionalData, tagLength: 128}, key, ciphertext
+      );
+      return validatePayload(JSON.parse(new TextDecoder('utf-8', {fatal: true}).decode(plaintext)), plan);
+    } catch (error) {
+      if (error instanceof PaymentError) throw error;
+      throw new PaymentError('档案解密未完成，请重新核验。');
+    }
+  }
+
+  function waitForBridge() {
+    const ready = () => global.WeixinJSBridge && typeof global.WeixinJSBridge.invoke === 'function';
+    if (ready()) return Promise.resolve(global.WeixinJSBridge);
+    if (!/MicroMessenger/i.test(global.navigator.userAgent)) {
+      return Promise.reject(new PaymentError('请在微信内打开此页，或使用收银台提供的其他方式。'));
+    }
+    return new Promise((resolve, reject) => {
+      const onReady = () => {
+        if (!ready()) return;
+        global.clearTimeout(timer);
+        document.removeEventListener('WeixinJSBridgeReady', onReady);
+        resolve(global.WeixinJSBridge);
+      };
+      const timer = global.setTimeout(() => {
+        document.removeEventListener('WeixinJSBridgeReady', onReady);
+        reject(new PaymentError('微信收银台暂未就绪，请返回页面后重试。'));
+      }, 4500);
+      document.addEventListener('WeixinJSBridgeReady', onReady);
+      onReady();
+    });
+  }
+
+  async function invokeJsapi(params) {
+    const fields = ['appId', 'timeStamp', 'nonceStr', 'package', 'signType', 'paySign'];
+    if (!params || !fields.every(field => typeof params[field] === 'string' && params[field].length) ||
+        params.signType !== 'RSA' || !/^\d+$/.test(params.timeStamp) ||
+        !params.package.startsWith('prepay_id=')) {
+      throw new PaymentError('收银台参数暂不可用，请稍后重试。');
+    }
+    const signed = {};
+    fields.forEach(field => { signed[field] = params[field]; });
+    const bridge = await waitForBridge();
+    return new Promise((resolve, reject) => {
+      const timer = global.setTimeout(() => resolve('timeout'), 45000);
+      try {
+        bridge.invoke('getBrandWCPayRequest', signed, result => {
+          global.clearTimeout(timer);
+          const status = result && result.err_msg;
+          if (status === 'get_brand_wcpay_request:ok') resolve('ok');
+          else if (status === 'get_brand_wcpay_request:cancel') resolve('cancel');
+          else resolve('fail');
+        });
+      } catch (_) {
+        global.clearTimeout(timer);
+        reject(new PaymentError('未能打开微信收银台，请稍后重试。'));
+      }
+    });
+  }
+
+  class WeChatPayBridge {
+    constructor(options) {
+      const config = options || {};
+      this.endpoint = config.endpoint || '/api/sixty-four';
+      this.redirectOrigins = Array.isArray(config.redirectOrigins) ? config.redirectOrigins.slice() : [];
+      const local = global.location.protocol === 'file:' || LOOPBACK.includes(global.location.hostname);
+      Object.defineProperty(this, 'previewEnabled', {value: config.preview === true && local});
+      this.loadPreview = config.loadPreview;
+      this.onUpdate = typeof config.onUpdate === 'function' ? config.onUpdate : () => {};
+      this.memory = new Map();
+      this.operation = null;
+    }
+
+    recordKey(profileId) {
+      return 'profile:' + profileId;
+    }
+
+    read(key, context) {
+      const id = this.recordKey(context.profileId);
+      const memoryId = key + '/' + id;
+      try {
+        let saved = this.memory.get(memoryId);
+        if (saved === undefined) {
+          const records = JSON.parse(global.localStorage.getItem(key) || '{}');
+          saved = records && records[id];
+        }
+        return saved && saved.factionId === context.factionId ? saved : null;
+      } catch (_) {
+        return null;
+      }
+    }
+
+    write(key, context, value) {
+      const id = this.recordKey(context.profileId);
+      const memoryId = key + '/' + id;
+      const record = value ? Object.assign({factionId: context.factionId}, value) : null;
+      try {
+        const parsed = JSON.parse(global.localStorage.getItem(key) || '{}');
+        const records = parsed && typeof parsed === 'object' && !Array.isArray(parsed) ? parsed : {};
+        if (record) records[id] = record;
+        else delete records[id];
+        global.localStorage.setItem(key, JSON.stringify(records));
+        this.memory.delete(memoryId);
+      } catch (_) {
+        this.memory.set(memoryId, record);
+      }
+    }
+
+    update(context, state, message, extras) {
+      const result = Object.assign({
+        state, message, profileId: context.profileId, factionId: context.factionId
+      }, extras);
+      try { this.onUpdate(result); } catch (_) { /* UI errors never change payment state. */ }
+      return result;
+    }
+
+    run(type, context, task) {
+      if (!validContext(context)) {
+        return Promise.resolve({state: 'error', message: '档案编号无效，请重新打开结果。'});
+      }
+      if (this.operation) {
+        const active = this.operation;
+        if (active.profileId === context.profileId &&
+            ((active.type === type && active.plan === context.plan) || type === 'restore')) {
+          return active.promise;
+        }
+        if (active.profileId === context.profileId && active.type === 'restore') {
+          return active.promise.then(() => this.run(type, context, task));
+        }
+        return Promise.resolve({state: 'busy', message: '正在核验另一笔订单。'});
+      }
+      const operation = {type, profileId: context.profileId, plan: context.plan};
+      operation.promise = Promise.resolve().then(task).catch(error => this.update(
+        context, 'error', error instanceof PaymentError ? error.message : '连接暂时中断，请稍后重新核验。'
+      )).then(result => {
+        if (this.operation === operation) this.operation = null;
+        return result;
+      });
+      this.operation = operation;
+      return operation.promise;
+    }
+
+    async request(path, payload, accepted) {
+      const base = new URL(this.endpoint.replace(/\/+$/, '') + '/', global.location.href);
+      if (base.origin !== global.location.origin || base.username || base.password || base.search || base.hash ||
+          (base.protocol !== 'https:' && !(base.protocol === 'http:' && LOOPBACK.includes(base.hostname)))) {
+        throw new PaymentError('安全收银台暂未配置。');
+      }
+      const url = new URL(path, base);
+      const controller = typeof global.AbortController === 'function' ? new global.AbortController() : null;
+      const fetchResult = (async () => {
+        const response = await global.fetch(url.href, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+          credentials: 'same-origin',
+          cache: 'no-store',
+          redirect: 'error',
+          signal: controller ? controller.signal : undefined,
+          body: JSON.stringify(payload)
+        });
+        if (!response.ok) {
+          if (accepted && accepted.includes(response.status)) return {state: 'unauthorized'};
+          throw new PaymentError('收银台暂不可用，请稍后重试。');
+        }
+        return response.json();
+      })();
+      let timer;
+      const timeout = new Promise((resolve, reject) => {
+        timer = global.setTimeout(() => {
+          if (controller) controller.abort();
+          reject(new PaymentError('网络等待超时，订单可稍后继续核验。'));
+        }, 7500);
+      });
+      try {
+        return await Promise.race([fetchResult, timeout]);
+      } finally {
+        global.clearTimeout(timer);
+      }
+    }
+
+    async loadUnlocked(context, record) {
+      if (!record || !validPlan(record.plan) || !validServerToken(record.value)) return null;
+      const receipt = await this.request('content', {
+        profileId: context.profileId, factionId: context.factionId, unlockToken: record.value
+      }, [401, 403, 404, 410]);
+      if (receipt && receipt.state === 'unauthorized') {
+        const latest = this.read(TOKEN_KEY, context);
+        if (latest && latest.value === record.value) this.write(TOKEN_KEY, context, null);
+        return null;
+      }
+      if (!receipt || receipt.state !== 'unlocked' || !validPlan(receipt.plan) ||
+          !includesPlan(receipt.plan, record.plan) || receipt.profileId !== context.profileId ||
+          receipt.factionId !== context.factionId) {
+        throw new PaymentError('档案权益暂未确认，请稍后重新核验。');
+      }
+      const content = await decryptPayload(receipt.envelope, context, receipt.plan);
+      return this.update(context, 'unlocked', '档案已开启。', {plan: receipt.plan, content});
+    }
+
+    async fulfill(context, response, pending) {
+      if (!response || response.state !== 'paid' || !validPlan(response.plan) ||
+          !validServerToken(response.unlockToken) || response.profileId !== context.profileId ||
+          response.factionId !== context.factionId ||
+          (pending && !includesPlan(response.plan, pending.plan))) {
+        throw new PaymentError('订单权益暂未确认，请稍后重新核验。');
+      }
+      const record = {plan: response.plan, value: response.unlockToken};
+      this.write(TOKEN_KEY, context, record);
+      const unlocked = await this.loadUnlocked(context, record);
+      if (!unlocked) throw new PaymentError('支付已核验，档案凭证仍待签发。请稍后重新核验。');
+      this.clearPending(context, pending);
+      return Object.assign({}, unlocked, {fulfilledNow: true});
+    }
+
+    pending(context) {
+      const saved = this.read(PENDING_KEY, context);
+      return saved && validPlan(saved.plan) && typeof saved.requestId === 'string' &&
+        ORDER_ID.test(saved.requestId) && (!saved.orderId ||
+        (typeof saved.orderId === 'string' && ORDER_ID.test(saved.orderId))) ? saved : null;
+    }
+
+    clearPending(context, pending) {
+      const current = this.pending(context);
+      if (pending && current && current.requestId === pending.requestId) {
+        this.write(PENDING_KEY, context, null);
+      }
+    }
+
+    async check(context, pending, delays, pendingMessage) {
+      const details = {orderId: pending.orderId, plan: pending.plan};
+      this.update(context, 'checking', '正在核验支付状态…', details);
+      for (const delay of delays) {
+        if (delay) await new Promise(resolve => global.setTimeout(resolve, delay));
+        const response = await this.request('orders/status', {
+          orderId: pending.orderId || null,
+          requestId: pending.requestId,
+          profileId: context.profileId,
+          factionId: context.factionId
+        });
+        if (!response || typeof response.state !== 'string') {
+          throw new PaymentError('订单状态暂未同步，请稍后重新核验。');
+        }
+        if (response.state === 'paid') return this.fulfill(context, response, pending);
+        if (response.state === 'closed') {
+          this.clearPending(context, pending);
+          return this.update(context, 'closed', '这笔订单已关闭，可以重新开启收银台。', details);
+        }
+        if (response.state !== 'pending') throw new PaymentError('订单状态暂未同步，请稍后重新核验。');
+        if (document.hidden) break;
+      }
+      return this.update(context, 'pending', pendingMessage || '订单等待确认，可以返回此页重新核验。', details);
+    }
+
+    buy(context) {
+      return this.run('buy', context, async () => {
+        const plan = context.plan;
+        if (!validPlan(plan)) throw new PaymentError('请选择有效的档案版本。');
+        if (this.previewEnabled) {
+          return this.update(context, 'preview', '本地预览，请使用预览入口体验解封。', {plan});
+        }
+
+        let pending = this.pending(context);
+        if (pending && pending.plan !== plan) {
+          const previous = await this.check(context, pending, [0], '上一笔订单仍待确认，请先完成或核验。');
+          if (previous.state === 'pending' ||
+              (previous.state === 'unlocked' && includesPlan(previous.plan, plan))) return previous;
+          pending = null;
+        }
+        if (!pending) {
+          pending = {plan, requestId: randomId(), orderId: null};
+          this.write(PENDING_KEY, context, pending);
+        }
+
+        this.update(context, 'creating', '正在开启收银台…', {plan});
+        const response = await this.request('orders', {
+          profileId: context.profileId, factionId: context.factionId, plan,
+          requestId: pending.requestId
+        });
+        if (response && response.state === 'paid') return this.fulfill(context, response, pending);
+        if (response && response.state === 'closed') {
+          this.clearPending(context, pending);
+          return this.update(context, 'closed', '这笔订单已关闭，请重新开启收银台。', {plan});
+        }
+        if (!response || response.state !== 'pending' || response.plan !== plan ||
+            typeof response.orderId !== 'string' || !ORDER_ID.test(response.orderId) ||
+            (pending.orderId && pending.orderId !== response.orderId) ||
+            (response.amountFen !== PLANS[plan] && !(plan === 'archive' && response.amountFen === 1000))) {
+          throw new PaymentError('收银台订单暂未准备好，请稍后重试。');
+        }
+
+        pending.orderId = response.orderId;
+        this.write(PENDING_KEY, context, pending);
+        if (context.expectedAmountFen === 1000 && response.amountFen !== 1000) {
+          throw new PaymentError('补差价格暂未准备好，请核对已有订单。');
+        }
+        const checkout = response.checkout;
+        if (checkout && checkout.kind === 'jsapi') {
+          this.update(context, 'checkout', '请在微信收银台确认。', {plan, orderId: pending.orderId});
+          const result = await invokeJsapi(checkout.params);
+          return this.check(context, pending, result === 'ok' || result === 'timeout' ? POLL_DELAYS : [0],
+            result === 'cancel' ? '已返回档案页，订单仍可继续核验。' :
+              result === 'fail' ? '收银台已返回，可重新核验或继续支付。' : undefined);
+        }
+        if (checkout && checkout.kind === 'redirect' && typeof checkout.url === 'string') {
+          const target = new URL(checkout.url, global.location.href);
+          const sameOrigin = target.origin === global.location.origin;
+          if (target.username || target.password ||
+              (target.protocol !== 'https:' && !(sameOrigin && target.protocol === 'http:' && LOOPBACK.includes(target.hostname))) ||
+              (!sameOrigin && !this.redirectOrigins.includes(target.origin))) {
+            throw new PaymentError('收银台地址暂不可用，请稍后重试。');
+          }
+          const result = this.update(context, 'redirecting', '正在前往收银台，完成后请返回本页。', {
+            plan, orderId: pending.orderId
+          });
+          global.location.assign(target.href);
+          return result;
+        }
+        return this.check(context, pending, [0]);
+      });
+    }
+
+    restore(context) {
+      return this.run('restore', context, async () => {
+        const record = this.read(TOKEN_KEY, context);
+        if (this.previewEnabled) {
+          if (record && validPlan(record.plan) && /^preview-[a-f0-9]{32}$/.test(record.value)) {
+            return this.preview(context, record);
+          }
+          return this.update(context, 'locked', '');
+        }
+
+        const pending = this.pending(context);
+        let pendingChecked = false;
+        if (pending && (!record || !includesPlan(record.plan, pending.plan))) {
+          const result = await this.check(context, pending, record ? [0] : POLL_DELAYS);
+          pendingChecked = true;
+          if (result.state === 'unlocked' || !record) return result;
+        }
+        const unlocked = await this.loadUnlocked(context, record);
+        if (unlocked) {
+          if (pending && includesPlan(unlocked.plan, pending.plan)) this.clearPending(context, pending);
+          return unlocked;
+        }
+        if (!pendingChecked && pending && this.pending(context)) return this.check(context, pending, POLL_DELAYS);
+        return this.update(context, 'locked', '');
+      });
+    }
+
+    simulate(context) {
+      return this.run('simulate', context, async () => {
+        if (!this.previewEnabled || !validPlan(context.plan)) return this.update(context, 'locked', '');
+        const existing = this.read(TOKEN_KEY, context);
+        if (existing && validPlan(existing.plan) && includesPlan(existing.plan, context.plan) &&
+            /^preview-[a-f0-9]{32}$/.test(existing.value)) return this.preview(context, existing);
+        const record = {plan: context.plan, value: 'preview-' + randomId()};
+        return this.preview(context, record);
+      });
+    }
+
+    async preview(context, record) {
+      if (!this.previewEnabled || typeof this.loadPreview !== 'function') {
+        return this.update(context, 'locked', '');
+      }
+      const content = validatePayload(await this.loadPreview({
+        factionId: context.factionId, profileId: context.profileId, plan: record.plan, token: record.value
+      }), record.plan);
+      this.write(TOKEN_KEY, context, record);
+      return this.update(context, 'unlocked', '本地档案预览已开启。', {
+        plan: record.plan, content, simulated: true
+      });
+    }
+  }
+
+  WeChatPayBridge.PLANS = PLANS;
+  global.WeChatPayBridge = WeChatPayBridge;
+})(window);
+
+// BEGIN LOCAL PREVIEW
+// Demo data and its demo key ship together for offline testing. Production removes this entire block.
+async function loadPreviewContent({factionId, plan}) {
+  const toBytes = (value) => Uint8Array.from(atob(value), (character) => character.charCodeAt(0));
+  const key = await crypto.subtle.importKey('raw', toBytes('rW7ec33FQBcj+tp4NvyQBuIBlkIegbGDNhhHiz6WR1Y='), 'AES-GCM', false, ['decrypt']);
+  const decrypted = await crypto.subtle.decrypt({name:'AES-GCM', iv:toBytes('9FCS93Calh+pr/Tn')}, key, toBytes('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'));
+  const data = JSON.parse(new TextDecoder().decode(decrypted));
+  return plan === 'archive' ? {modules:data.modulesByFaction[factionId], slices:data.slices} : {modules:data.modulesByFaction[factionId]};
+}
+// END LOCAL PREVIEW
+const QUIZ = {
+  "chapters": [
+    {
+      "name": "存在与虚无",
+      "reveal": "第一层轮廓浮现。你留给空白的位置，和你亲手填满的位置一样清晰。",
+      "questions": [
+        {
+          "prompt": "有一天醒来，你的影子还在，镜中却只照见身后的空房。你先做什么？",
+          "options": [
+            {
+              "text": "写下今天要做的事，照原计划出门。",
+              "scores": {
+                "existentialist": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "翻找童年照片，确认自己曾在谁身旁。",
+              "scores": {
+                "remembrancer": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "对镜子鞠躬，看看这场荒唐还会怎样继续。",
+              "scores": {
+                "absurdist": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "用床单盖住镜子，把早餐吃完。",
+              "scores": {
+                "cynic": 3,
+                "linguist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "一座城市要求每人交存一样东西，才能领到存在证。你交出什么？",
+          "options": [
+            {
+              "text": "一封为陌生人作证的实名信。",
+              "scores": {
+                "ethical": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "一页只写了「我」字的纸。",
+              "scores": {
+                "linguist": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "一段写给空房间的旋律。",
+              "scores": {
+                "aesthetic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "一张替邻居代收的包裹签单。",
+              "scores": {
+                "relational": 3,
+                "remembrancer": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "博物馆展出你一生中从未做过的事。其中一件被评为馆藏之最。你如何回应？",
+          "options": [
+            {
+              "text": "参加颁奖，念一份从未写过的致辞。",
+              "scores": {
+                "absurdist": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "请曾和我一起放弃那件事的人并肩来看。",
+              "scores": {
+                "relational": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "问馆方能否留一只展柜，展出我明天会做的事。",
+              "scores": {
+                "existentialist": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "错开导览时间，独自抄下那件展品的说明牌。",
+              "scores": {
+                "linguist": 3,
+                "remembrancer": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "所有空椅子突然能够说话。你家那把一直空着的椅子叫住了你。你如何应答？",
+          "options": [
+            {
+              "text": "录下椅腿摩擦地面的尾音，编入一首二重奏。",
+              "scores": {
+                "aesthetic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "问它有没有见过谁一直站着，即使本可坐下。",
+              "scores": {
+                "ethical": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "搬走椅背上的杂物，再问它要不要换个位置。",
+              "scores": {
+                "cynic": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "问它还记不记得最后一个坐在那里的人。",
+              "scores": {
+                "remembrancer": 3,
+                "absurdist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "某天午夜，门外有人递来一张出生退回单，邮费已由你未来的自己付清。你怎样处理？",
+          "options": [
+            {
+              "text": "拿退回单去补桌脚，明早还有饭要吃。",
+              "scores": {
+                "cynic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "填上「出生无误，投递地址存疑」，原样寄回。",
+              "scores": {
+                "absurdist": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "先陪等在楼道里的邮差坐一会儿，听他为何送这封信。",
+              "scores": {
+                "relational": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "问邮差，退件会让谁失去已经发生的人生。",
+              "scores": {
+                "ethical": 3,
+                "existentialist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "剧场里的每个观众都戴着你的脸，演员却拒绝上台。你买下唯一一张离场票后会做什么？",
+          "options": [
+            {
+              "text": "顺着一张张脸找，哪一张是我最早认得的。",
+              "scores": {
+                "remembrancer": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "把票交回，走上舞台说一句自己想说的话。",
+              "scores": {
+                "existentialist": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "把「离场」的围栏拆掉，看看票究竟允许我离开什么。",
+              "scores": {
+                "linguist": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "把票撕成纸雪，从二楼撒向空舞台。",
+              "scores": {
+                "aesthetic": 3,
+                "existentialist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "人人胸前都悬浮一条存在指数，只有你的数字越被注视越低。你怎么度过这一天？",
+          "options": [
+            {
+              "text": "问盯着数字的人，他们何时才把「看见」当成「了解」。",
+              "scores": {
+                "linguist": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "穿一件厚外套出门，省下给路人解释的力气。",
+              "scores": {
+                "cynic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "揭下全城的公开排行榜，承担破坏公物的罚单。",
+              "scores": {
+                "ethical": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "去做已经答应的事，让指数自己波动。",
+              "scores": {
+                "existentialist": 3,
+                "cynic": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "一位地质学家说，海底的石层里有一整条属于你的星期二。你只获准下潜一次。你想找什么？",
+          "options": [
+            {
+              "text": "想找同路人刻在石面上的最后一笔。",
+              "scores": {
+                "relational": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "想找透过石层的最后一线光，把颜色记下来。",
+              "scores": {
+                "aesthetic": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "想找过去我以为早就忘了的凹痕。",
+              "scores": {
+                "remembrancer": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "想找一块上面什么也没有、却被定为珍贵的石头。",
+              "scores": {
+                "absurdist": 3,
+                "relational": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "时间与记忆",
+      "reveal": "第二层纹路浮现。你走过的时间，有些沉进细节，有些仍在改变方向。",
+      "questions": [
+        {
+          "prompt": "钟表匠可以从你的过去剪下一分钟做成表带，它仍会每天重演。你怎样决定？",
+          "options": [
+            {
+              "text": "留一段平常晚饭的尾声，听餐具碰撞。",
+              "scores": {
+                "remembrancer": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "留一次临时改主意的瞬间，提醒自己还能再选。",
+              "scores": {
+                "existentialist": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "留一分钟迟到，在任何准点的场合重演。",
+              "scores": {
+                "absurdist": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "把表推回去，我更需要一只准时的钟。",
+              "scores": {
+                "cynic": 3,
+                "linguist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "你收到十年后的公共纪念碑拓片，上面把同一天写成你的荣耀和一个陌生人的灾难。你先做什么？",
+          "options": [
+            {
+              "text": "找这位陌生人，请他讲自己的版本。",
+              "scores": {
+                "relational": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "用同一块纸拓一遍背面，留下两面彼此穿透的墨色。",
+              "scores": {
+                "aesthetic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "发一份校勘，把「荣耀」和「灾难」放回各自的叙述里。",
+              "scores": {
+                "linguist": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "查那天我的收益是否来自对方承担的损失。",
+              "scores": {
+                "ethical": 3,
+                "relational": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "列车每经过一站，所有乘客就会忘掉同一个年份。到站之前，你有三十秒。你会做什么？",
+          "options": [
+            {
+              "text": "写下那一年的三个坐标，留给忘记之后的读者。",
+              "scores": {
+                "linguist": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "数着秒针，观察大家何时第一次穿过自己的空洞。",
+              "scores": {
+                "absurdist": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "问身边的人想主动留下哪一段，我可以一起记住。",
+              "scores": {
+                "relational": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "拉下紧急制动，接受可能耽误的所有行程。",
+              "scores": {
+                "existentialist": 3,
+                "relational": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "一张相纸能显露你目击却未留意的细节，但只能冲洗一次。你选择哪张底片？",
+          "options": [
+            {
+              "text": "那次我确信自己是公正旁观者的争执。",
+              "scores": {
+                "ethical": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "老家餐桌最后一顿饭里落向碗底的斜阳。",
+              "scores": {
+                "remembrancer": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "哪张都不挑，把冲洗时间留给今天正在发生的事。",
+              "scores": {
+                "cynic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "暴雨在空城尽头将落未落的一格。",
+              "scores": {
+                "aesthetic": 3,
+                "cynic": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "未来的人把你当成预言家，只因为你七岁时一本涂鸦刚好连续猜中五场灾难。接下来怎么办？",
+          "options": [
+            {
+              "text": "给下一张纸留白，题名《第六次准确预言》。",
+              "scores": {
+                "absurdist": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "把涂鸦卖给旧书摊，拒绝开办任何纪念馆。",
+              "scores": {
+                "cynic": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "公开原稿和全部猜错的地方，先制止恐慌。",
+              "scores": {
+                "ethical": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "找到还记得这本涂鸦的人，问当初为何一起画它。",
+              "scores": {
+                "relational": 3,
+                "remembrancer": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "旧房即将拆除，一间房可以原样移走。其余房间只剩你在墙上写的一行字。你怎样分配？",
+          "options": [
+            {
+              "text": "放弃搬运，在清空的位置给今天的自己画一条起跑线。",
+              "scores": {
+                "existentialist": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "把各个房间曾用过的名字并列写下，让后来者辨认。",
+              "scores": {
+                "linguist": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "搬走唯一朝西的房间，和夕阳约个新地址。",
+              "scores": {
+                "aesthetic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "搬走有门框身高刻痕的房间，给日子留个尺度。",
+              "scores": {
+                "remembrancer": 3,
+                "ethical": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "城里的日历每天会多出一个昨天。被你承认的那个版本将留存。你按什么原则选？",
+          "options": [
+            {
+              "text": "选保留必要约定的那个，其余让它自行翻过。",
+              "scores": {
+                "cynic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "选能保留被遮掩的那桩过错的版本。",
+              "scores": {
+                "ethical": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "选让我今天必须重新做决定的那个。",
+              "scores": {
+                "existentialist": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "先让两版各自说完，再比较它们口中的「昨天」。",
+              "scores": {
+                "linguist": 3,
+                "relational": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "雨每下三分钟，便洗掉一个人的一段怨恨。窗外雨声快满三分钟，那段事就要消失。你做什么？",
+          "options": [
+            {
+              "text": "把窗敞开，用接雨的浅盘留下那段静默的形状。",
+              "scores": {
+                "aesthetic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "打电话给一起受伤的人，问是否愿意在雨里同站片刻。",
+              "scores": {
+                "relational": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "抄下一件始终忘不掉的小事，留作边缘的水印。",
+              "scores": {
+                "remembrancer": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "看雨停又起，等自己试着对同一件事生两次相反的气。",
+              "scores": {
+                "absurdist": 3,
+                "linguist": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "自由与宿命",
+      "reveal": "第三层骨架浮现。那些无法选择的条件，正衬出你在哪里仍然拥有选择。",
+      "questions": [
+        {
+          "prompt": "港口每天只开一艘船。登船前，一张单程票会印上你抵岸后必定做的第一件事。你拿到票后怎样处理？",
+          "options": [
+            {
+              "text": "签名上船，到了对岸再决定那件事的做法。",
+              "scores": {
+                "existentialist": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "在码头宣布票上的事已预演完毕，请船照常开。",
+              "scores": {
+                "absurdist": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "截下起航时间，查有没有送货船载客。",
+              "scores": {
+                "cynic": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "退票，回去继续昨天与家人约好的事。",
+              "scores": {
+                "remembrancer": 3,
+                "relational": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "山坡上的每扇门都恰好通往一个人的命定职业。你被安排当守门人。第一天你做什么？",
+          "options": [
+            {
+              "text": "和第一个被关在门外的人聊聊，他愿意去哪一扇。",
+              "scores": {
+                "relational": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "给无名的门各画一幅景色，任人从图案挑起。",
+              "scores": {
+                "aesthetic": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "帮没有钥匙的人登记，给每个人一次自行开门的机会。",
+              "scores": {
+                "ethical": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "请来访者先说「职业」一词在他们家里是什么意思。",
+              "scores": {
+                "linguist": 3,
+                "existentialist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "一座桥会在你第七次经过时倒下。今天是第六次，桥对面工作的陌生人等着你赴约。你怎么做？",
+          "options": [
+            {
+              "text": "查第七次「经过」是否包括只走到桥心又退回。",
+              "scores": {
+                "linguist": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "告诉对方原委，请他和我一起改约到河这边。",
+              "scores": {
+                "relational": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "连夜找船，按约定时间到达，再去处理那座桥。",
+              "scores": {
+                "existentialist": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "退到桥头，问倒下的是桥，还是这个次数的说法。",
+              "scores": {
+                "absurdist": 3,
+                "linguist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "掷出的骰子会闪现你一周后最后悔的一件事。手里的骰子有人愿用一个月薪水买走。你怎么做？",
+          "options": [
+            {
+              "text": "卖掉骰子，把钱拿来买下一周可自由支配的时间。",
+              "scores": {
+                "cynic": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "辨认那件事是否会连累别人，再决定要不要掷。",
+              "scores": {
+                "ethical": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "把骰子存进行李箱，让寄来时的薄纸仍裹着它。",
+              "scores": {
+                "remembrancer": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "用透明盒把骰子封住，让它永远停在指尖刚放开的高度。",
+              "scores": {
+                "aesthetic": 3,
+                "absurdist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "一个陌生人把自己所有未使用的选择权都签给你。一张签名可以让饮水、婚姻或工作自动决定。你怎么办？",
+          "options": [
+            {
+              "text": "把所有签名贴在抽签桶外，唯一正确的结果是空桶。",
+              "scores": {
+                "absurdist": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "留几张代我选午饭，其余都过期作废。",
+              "scores": {
+                "cynic": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "约对方尝试一起做个无关紧要的小决定。",
+              "scores": {
+                "relational": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "把签好的纸逐张退还，陪对方查清是谁逼他签字。",
+              "scores": {
+                "ethical": 3,
+                "relational": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "午夜能从平行城市借用另一个你的一次决定。这里只告诉你结果，没有经过。你愿意借哪一种？",
+          "options": [
+            {
+              "text": "借一次重访童年故居的决定，再走一遍旧路。",
+              "scores": {
+                "remembrancer": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "先问「借用」是否需要把另一个人的选择还回去。",
+              "scores": {
+                "linguist": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "借一场十年完成一件小作品的决定，看看作品的样子。",
+              "scores": {
+                "aesthetic": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "借一个能让我立刻着手改变眼下局面的决定。",
+              "scores": {
+                "existentialist": 3,
+                "ethical": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "峡谷里有根绳索。只要你松手，另一端那个人的一生就会改道，但谁都看不到他是谁。你会怎么办？",
+          "options": [
+            {
+              "text": "握住绳索，直到有人能解释松手可能伤害谁。",
+              "scores": {
+                "ethical": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "选择自己愿意承担的一边，主动结束悬而未决。",
+              "scores": {
+                "existentialist": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "朝峡谷喊出规则，请另一端纠正我的理解。",
+              "scores": {
+                "linguist": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "找块石头压住绳，回去找附近能讲清装置的人。",
+              "scores": {
+                "cynic": 3,
+                "absurdist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "你到了一条赛道，终点早已刻好你的抵达时刻，连分毫都标得清楚。发令声起，你怎么跑？",
+          "options": [
+            {
+              "text": "留意身体移动时看台的明暗，每圈换一种节奏。",
+              "scores": {
+                "aesthetic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "在本该冲刺的拐弯，试走一遍幼时跑步的步法。",
+              "scores": {
+                "remembrancer": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "起跑后沿边跑，等时刻与我的脚步自相矛盾。",
+              "scores": {
+                "absurdist": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "找一名一直落单的跑者，商量是否同行一圈。",
+              "scores": {
+                "relational": 3,
+                "existentialist": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "他者与孤独",
+      "reveal": "第四层接缝浮现。靠近、退开和留下，都在刻画你与他人的距离。",
+      "questions": [
+        {
+          "prompt": "餐馆每天为一个一直缺席的人摆一套餐具。侍者说那人的名字恰好和你一样。你怎么做？",
+          "options": [
+            {
+              "text": "留下来问侍者，那个人坐这里时点过什么。",
+              "scores": {
+                "remembrancer": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "带一位同名者来，把三套餐具坐成一出戏。",
+              "scores": {
+                "absurdist": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "推过自己桌上的一碟菜，请侍者少洗一只盘子。",
+              "scores": {
+                "cynic": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "明晚照样订自己的桌位，亲手写预约名。",
+              "scores": {
+                "existentialist": 3,
+                "cynic": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "潜水钟下沉时只有一具耳机可用。你会听见岸上一个人的心思，对方可以自己决定说多少。你想听谁？",
+          "options": [
+            {
+              "text": "听检修员还在犹豫要不要写进报告的疑虑。",
+              "scores": {
+                "ethical": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "听调音师在沉默里辨认到了什么。",
+              "scores": {
+                "aesthetic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "听译员待在两种语言之间时的自言自语。",
+              "scores": {
+                "linguist": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "听曾与我同船而从未交谈过的人。",
+              "scores": {
+                "relational": 3,
+                "linguist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "孤岛提供一台传真机，可以每天收到外界一条误寄给别人的信息。你打算如何处理？",
+          "options": [
+            {
+              "text": "遇到应该有人接住的话，就把确认回执发出去。",
+              "scores": {
+                "relational": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "根据误寄的重复模式，想办法让发信人修正地址。",
+              "scores": {
+                "linguist": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "自定每周接收的一天，把剩下的时间留给岛上的事。",
+              "scores": {
+                "existentialist": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "把每张回执都署名「失踪的原收件人」，看会引来什么回音。",
+              "scores": {
+                "absurdist": 3,
+                "remembrancer": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "你遗失的手套被陌生人捡到。他寄回手套，还奉上一只自己的手套。你做什么？",
+          "options": [
+            {
+              "text": "把两只缝在一起，让两种磨损成为同一面的纹路。",
+              "scores": {
+                "aesthetic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "先问他是否还需要手套，确认怎样归还对他方便。",
+              "scores": {
+                "ethical": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "保存这两只，在以后路过邮戳上的小镇时去拜访。",
+              "scores": {
+                "remembrancer": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "把两只都戴上，哪怕颜色不搭也能保暖。",
+              "scores": {
+                "cynic": 3,
+                "linguist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "城里出现一间房，里面可以彻底独处，但房门须由另一个人替你扣上。你会怎么进去？",
+          "options": [
+            {
+              "text": "请管理员照常值班时帮个忙，无需举行告别。",
+              "scores": {
+                "cynic": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "找信任的人，事先商量什么时候回来敲门。",
+              "scores": {
+                "relational": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "邀请讨厌我的人来，他肯定懂我此刻多想清静。",
+              "scores": {
+                "absurdist": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "先核对从里面能否开门，再决定是否试用。",
+              "scores": {
+                "ethical": 3,
+                "linguist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "隔壁的陌生人每天隔墙吹一次口哨。第十天你发现，那面墙会把同一声口哨变成两个音高。你怎么做？",
+          "options": [
+            {
+              "text": "试着换一个音，确认那是信号、练习，还是问候。",
+              "scores": {
+                "linguist": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "转到楼道，敲门说明我想知道每天是谁在吹。",
+              "scores": {
+                "existentialist": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "回吹一小段，听旋律怎样在墙两边生长。",
+              "scores": {
+                "aesthetic": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "回吹第一天听过的曲调，留心走音的地方。",
+              "scores": {
+                "remembrancer": 3,
+                "aesthetic": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "集体肖像完工后，所有画中人都慢慢面朝你。唯一背对你的人现在可以改一次姿势。你怎么办？",
+          "options": [
+            {
+              "text": "在肖像边缘加一个自选站位，给自己转个身。",
+              "scores": {
+                "existentialist": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "留下背影，再把画挂在平时没人久站的楼梯上。",
+              "scores": {
+                "cynic": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "让那个人决定怎么站，其他视线由我承受。",
+              "scores": {
+                "ethical": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "问画家，背影什么时候被大家读成了拒绝。",
+              "scores": {
+                "linguist": 3,
+                "remembrancer": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "每人睡前可选择让另一个人同做一场梦。今晚起，一辈子只能选一次。你打算怎么用？",
+          "options": [
+            {
+              "text": "给城里最擅长解说梦的人，让他亲自走进一场无法解说的梦。",
+              "scores": {
+                "absurdist": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "选童年旧友，看看我们还能不能梦到同一条街。",
+              "scores": {
+                "remembrancer": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "选正在度过漫长夜班的人，给他一段共享的黎明。",
+              "scores": {
+                "relational": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "不发给具体的人，愿意拾到它的人可以接着做。",
+              "scores": {
+                "aesthetic": 3,
+                "remembrancer": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "语言与边界",
+      "reveal": "第五层边缘浮现。你倾向于替模糊的事命名，也可能给暂时说不清的事留出余地。",
+      "questions": [
+        {
+          "prompt": "政府规定「明天」一词只许再说一次。你手里有最后一张使用许可。你把这个词用在哪里？",
+          "options": [
+            {
+              "text": "对一只刚停摆的钟郑重地说。",
+              "scores": {
+                "absurdist": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "给词典录一条有具体上下文的口语例句。",
+              "scores": {
+                "linguist": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "写进一份自己此刻就能兑现的承诺。",
+              "scores": {
+                "existentialist": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "留着不花，把办手续的空当还给自己的下午。",
+              "scores": {
+                "cynic": 3,
+                "ethical": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "私人书信会在寄出后自行删掉一句。你知道规则，收信人并不知道。你会怎样写？",
+          "options": [
+            {
+              "text": "另附一页同样重要的事实，免得关键证词凭空消失。",
+              "scores": {
+                "ethical": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "重抄一遍对方当年写给我的开头，让他认出这封信。",
+              "scores": {
+                "remembrancer": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "把每段尾句写成可拆的节拍，少一句也有自己的韵律。",
+              "scores": {
+                "aesthetic": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "写上可见面的时间，预留当面补说的机会。",
+              "scores": {
+                "relational": 3,
+                "existentialist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "字典里「家」与「路」的词义对调了。第一天，人们纷纷照着新释义生活。你做什么？",
+          "options": [
+            {
+              "text": "沿着每天回家的路线走，想住哪里到傍晚再决定。",
+              "scores": {
+                "existentialist": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "给过路人发门牌号，邀请每段旅程登记为常住人口。",
+              "scores": {
+                "absurdist": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "去驿站接待还想去原来地址的人，听他们自己指路。",
+              "scores": {
+                "relational": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "给新版字典加脚注，解释哪几种用法还在流通。",
+              "scores": {
+                "linguist": 3,
+                "existentialist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "法庭只能受理用一个动词叙述的事件。一位受伤者请你帮忙选词。你先做什么？",
+          "options": [
+            {
+              "text": "画出动作起落的四格草图，让那个动词从完整画面里出现。",
+              "scores": {
+                "aesthetic": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "问他希望获得哪种实际补救，再挑能请求它的动词。",
+              "scores": {
+                "ethical": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "找负责受理的书记员，用实际案例试出可行写法。",
+              "scores": {
+                "cynic": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "从对方留下的日记里读出事情发生的次序。",
+              "scores": {
+                "remembrancer": 3,
+                "relational": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "语言学家发明了一个词，能令听者立即理解你想道歉的那件事，但说完就永远忘了对方。你怎么做？",
+          "options": [
+            {
+              "text": "去见对方，仍然用原来的句子慢慢道歉。",
+              "scores": {
+                "relational": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "把新词收回字典，把账当面结清。",
+              "scores": {
+                "cynic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "决定前先问对方是否愿意承担这次告别。",
+              "scores": {
+                "ethical": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "只对空房间说，验证它能不能令我忘掉一面墙。",
+              "scores": {
+                "absurdist": 3,
+                "linguist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "一座塔的每一层都能把你说的一句话译成更准确的版本，顶楼没有嘴也能发言。你在哪一层停？",
+          "options": [
+            {
+              "text": "停在第一处发现译文替我添加了意图的楼层。",
+              "scores": {
+                "linguist": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "走到顶楼，用手势感受没有口型的发言。",
+              "scores": {
+                "aesthetic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "停在还听得出熟人说话口音的最高一层。",
+              "scores": {
+                "remembrancer": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "停在需要我亲口选用哪个版本的楼层。",
+              "scores": {
+                "existentialist": 3,
+                "cynic": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "城市给每个人发了一枚句号，可以让一段公开争论立刻结束。你如何使用？",
+          "options": [
+            {
+              "text": "当作一枚旧硬币带着，等楼道没人吵时刚好垫门。",
+              "scores": {
+                "cynic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "把句号留给自己，在承认一次判断错误后结束发言。",
+              "scores": {
+                "existentialist": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "在双方能重述彼此的问题后，再问是否愿意落下句号。",
+              "scores": {
+                "linguist": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "用在有人被反复指名围攻时，先留出撤离通道。",
+              "scores": {
+                "ethical": 3,
+                "cynic": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "某国图书馆收录所有无人识得的词语。馆员说，最后一个词的发音需要四个人同时出声。你会选哪些人？",
+          "options": [
+            {
+              "text": "找记得几种旧口音的老人，试着拼回失散的读法。",
+              "scores": {
+                "remembrancer": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "找彼此等过消息的人，让四种声音合在一处。",
+              "scores": {
+                "relational": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "找四位彼此都认定其他三人读错的人，让他们迎着分歧读完。",
+              "scores": {
+                "absurdist": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "找拥有不同音域的歌者，听它最终成为哪种和弦。",
+              "scores": {
+                "aesthetic": 3,
+                "absurdist": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "道德与深渊",
+      "reveal": "第六层暗面浮现。到了必须付出代价的地方，你的取舍逐渐有了重量。",
+      "questions": [
+        {
+          "prompt": "审判日，一架秤能称出人做善事时的虚荣心。每次秤动，也必定毁掉那件善事留下的一个实际好处。你如何表决？",
+          "options": [
+            {
+              "text": "追问「虚荣」怎么从复杂动机里被单独划出来。",
+              "scores": {
+                "linguist": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "先统计有谁在靠那些好处过活，暂停开秤。",
+              "scores": {
+                "ethical": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "把自己的案件第一个送上秤，看规则能否执行到底。",
+              "scores": {
+                "existentialist": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "把秤送去市集称粮，先解决眼下的缺斤少两。",
+              "scores": {
+                "cynic": 3,
+                "aesthetic": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "城中将立一碑悼念一次失败的救援，刻字预算只够一句。你选什么？",
+          "options": [
+            {
+              "text": "刻下救援公示上那句「一切已按计划进行」。",
+              "scores": {
+                "absurdist": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "刻下家属最后同意留给路人的一句话。",
+              "scores": {
+                "relational": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "刻下一道断线及其余白，让晚来的脚步能够停留。",
+              "scores": {
+                "aesthetic": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "刻下那天当地报时钟停住的确切时分。",
+              "scores": {
+                "remembrancer": 3,
+                "ethical": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "有人能把每个人的歉意化为等值物品。你的邻居交来一箱过重的石头，请你搬走。你怎么做？",
+          "options": [
+            {
+              "text": "清出过道，提醒他搬法应让楼梯还能走人。",
+              "scores": {
+                "cynic": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "搬进广场，设一只牌子称它为「最沉默的解释」。",
+              "scores": {
+                "absurdist": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "列出受损者还缺的补偿，等这些需求先被接住。",
+              "scores": {
+                "ethical": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "约他一起把石头搬到楼下，再谈怎么回事。",
+              "scores": {
+                "relational": 3,
+                "existentialist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "一条街因你的决定得到了整夜通电，代价是另一条街忘掉当地一首歌。第二天议会让你把昨夜重过一次。你先做什么？",
+          "options": [
+            {
+              "text": "重新投票，签上我的名字，并承担替代方案的损失。",
+              "scores": {
+                "existentialist": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "照供电线路闪烁的间隔，做一版能用灯光传唱的谱。",
+              "scores": {
+                "aesthetic": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "去那条街问谁还记得歌词不见前唱到的地方。",
+              "scores": {
+                "remembrancer": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "问「忘掉」指唱不出，还是不能辨认彼此唱过它。",
+              "scores": {
+                "linguist": 3,
+                "ethical": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "一把伞能在暴雨里保护六人，只要握伞者愿意记住六人最不愿被提及的一件事。你拿到伞会怎样用？",
+          "options": [
+            {
+              "text": "先说清代价，只让愿意让我知道的人自己走近。",
+              "scores": {
+                "ethical": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "给每件事只留一个当事人同意的称呼，确认规则是否接受。",
+              "scores": {
+                "linguist": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "把伞靠在墙边，去找塑料布给候车点遮雨。",
+              "scores": {
+                "cynic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "握伞迈进雨里，亲自试能否把人逐个接到屋檐下。",
+              "scores": {
+                "existentialist": 3,
+                "cynic": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "全城必须选出一只动物，代人们承受每天最轻的一次不诚实。候选动物已列在公告栏。你怎么处理这张公告？",
+          "options": [
+            {
+              "text": "在每个动物名字旁画它原来的栖息地，贴回来供人看。",
+              "scores": {
+                "aesthetic": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "用背面抄下流传至今的、曾被承认为善意的谎话。",
+              "scores": {
+                "remembrancer": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "找到提案人，请他与每天负责饲养的人公开谈一次。",
+              "scores": {
+                "relational": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "把我的名字写在动物一栏，看看公告会不会自我撤回。",
+              "scores": {
+                "absurdist": 3,
+                "linguist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "你发现匿名捐助收据上印的每一笔善款，都能追到一个原本无意捐钱的人。你怎么处置收据？",
+          "options": [
+            {
+              "text": "和一位捐款现已帮到的人、一位被扣款的人一起看收据。",
+              "scores": {
+                "relational": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "把收据送回出具它的柜台，要求当面把账对一遍。",
+              "scores": {
+                "cynic": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "逐条区分票据上的「捐助」「代付」与「扣除」。",
+              "scores": {
+                "linguist": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "暂停后续扣款，查清每笔的同意记录和退回途径。",
+              "scores": {
+                "ethical": 3,
+                "existentialist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "大桥栏杆上可以刻下一件你愿让众人宽宥的事。刻完之后，所有人都将把那件事当作常事。你会怎样做？",
+          "options": [
+            {
+              "text": "留下受影响者愿意署名的经过，免得后来人只认识宽宥。",
+              "scores": {
+                "remembrancer": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "试刻自己愿公开承担的一件，并附下一步的修补动作。",
+              "scores": {
+                "existentialist": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "把「选择宽宥」四个字刻上去，等下一次刻字会如何发生。",
+              "scores": {
+                "absurdist": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "只刻它留下的形状，让路人感到重量后各自命名。",
+              "scores": {
+                "aesthetic": 3,
+                "remembrancer": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "审美与荒诞",
+      "reveal": "第七层裂纹浮现。你给不合常理的事留出的空间，开始带上自己的形状。",
+      "questions": [
+        {
+          "prompt": "美术馆每日举行一次闭馆仪式，只有一幅画获准在黑暗中发光。值班的你决定选哪幅？",
+          "options": [
+            {
+              "text": "选清洁工每次经过都会驻足的那幅，请他来开灯。",
+              "scores": {
+                "relational": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "选颜料最薄的那幅，看看光怎么从一层几乎没有的颜色里出来。",
+              "scores": {
+                "aesthetic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "选标着《闭馆中》的那幅，让整座馆在里面开着。",
+              "scores": {
+                "absurdist": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "就挑靠近出口的那幅，方便夜里走路。",
+              "scores": {
+                "cynic": 3,
+                "ethical": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "一支乐队演奏时，听众会看见自己失去过的一种颜色。你能要求他们加奏一次。你会怎样点？",
+          "options": [
+            {
+              "text": "把加奏权交给曾经被请出乐厅的人，让对方决定。",
+              "scores": {
+                "ethical": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "点一首从未上过节目单的曲子，愿意陪他们试奏。",
+              "scores": {
+                "existentialist": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "先请他们分别说出颜色与失去的关系，再按说法点。",
+              "scores": {
+                "linguist": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "点第一次见到那种颜色时街上正响着的曲子。",
+              "scores": {
+                "remembrancer": 3,
+                "aesthetic": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "雕塑展的作品每夜都交换自己的缺口。清晨你看见一尊整整齐齐的树，脚边掉下一块流泪的石头。你做什么？",
+          "options": [
+            {
+              "text": "把石头摆到树梢，让水滴落在照明里。",
+              "scores": {
+                "aesthetic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "把地擦干，给观众留一条安全的路。",
+              "scores": {
+                "cynic": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "查树昨夜是否从别的作品强行取走了完整。",
+              "scores": {
+                "ethical": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "铸一只等大的石头碗，专门接它省下的完整。",
+              "scores": {
+                "absurdist": 3,
+                "linguist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "一台机器生成全城公认的完美日落。你可以打断一次，灯灭后将看到当天真正的天色。你如何选时机？",
+          "options": [
+            {
+              "text": "在我每天下班的时分按下去，亲眼看一次。",
+              "scores": {
+                "existentialist": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "对照祖父记录过的日落时刻，在其中一格按下去。",
+              "scores": {
+                "remembrancer": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "约常在露台等人的邻居，一起说好一个时刻。",
+              "scores": {
+                "relational": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "等有人第一次把机器的产物叫作「故乡的天」，随即熄灯。",
+              "scores": {
+                "linguist": 3,
+                "remembrancer": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "所有雨伞撑开时都会随机播放一件主人的秘密。你的伞却只播放一首无法辨识的短曲。你怎么处理？",
+          "options": [
+            {
+              "text": "给伞挂上节目单，漏掉那首唯一的曲子。",
+              "scores": {
+                "absurdist": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "查清旋律里有没有别人的隐私，再决定能不能放给路人听。",
+              "scores": {
+                "ethical": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "给伞套一层隔音布，等天气晴了才送修。",
+              "scores": {
+                "cynic": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "每场雨录下一次，听细微的变调是否终会接成一首歌。",
+              "scores": {
+                "aesthetic": 3,
+                "absurdist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "剧院没有演员。只要成对买票，坐席之间会自动长出两人最后一次争执的布景。你怎样使用自己的票？",
+          "options": [
+            {
+              "text": "找一件那晚被我们忽略的布景细节，把它画在票根上。",
+              "scores": {
+                "remembrancer": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "两个人各给同一块布景起名，对照我们看到的差别。",
+              "scores": {
+                "linguist": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "带着愿意从今天开始采取的一个动作去，出门就执行。",
+              "scores": {
+                "existentialist": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "邀请当时没说完的人去，在散场后给对方补说的时间。",
+              "scores": {
+                "relational": 3,
+                "remembrancer": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "一台相机只拍得下城市中没人想留存的景物。胶卷剩一格，你会按在什么地方？",
+          "options": [
+            {
+              "text": "拍坏掉的路标，拿照片去报维修。",
+              "scores": {
+                "cynic": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "拍一整排拒绝参加合影的空白广告位。",
+              "scores": {
+                "absurdist": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "拍排风口旁被吹成镂空的一团灰。",
+              "scores": {
+                "aesthetic": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "拍曾被移走的无障碍坡道在地上的印子。",
+              "scores": {
+                "ethical": 3,
+                "remembrancer": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "某天全城的路灯都开始随行人步态改变亮度。只有凌晨一趟电车能载你旁观一整圈。你选哪节车厢？",
+          "options": [
+            {
+              "text": "选玻璃最清楚的一节，辨认哪种亮暗变化渐渐成了信号。",
+              "scores": {
+                "linguist": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "选司机的亲友平时常坐的靠前一节，问灯下有哪些熟客。",
+              "scores": {
+                "relational": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "选小时候同一路线经过学校时常坐的一节。",
+              "scores": {
+                "remembrancer": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "选可以自己决定何时下车的最后一节。",
+              "scores": {
+                "existentialist": 3,
+                "absurdist": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "终局与永恒",
+      "reveal": "第八层闭合。你在结束面前留下的东西，和你愿意放下的东西，都已进入档案。",
+      "questions": [
+        {
+          "prompt": "人生末尾有一间寄存处，保管员能让你带回世间一样已淘汰的小物。你挑什么？",
+          "options": [
+            {
+              "text": "挑有形状却没有准确刻度的漏沙器。",
+              "scores": {
+                "aesthetic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "挑寄存处自己的告示牌，请它用来宣布自身淘汰。",
+              "scores": {
+                "absurdist": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "挑一串再也打不开旧门的钥匙，归还给搬家的那个人。",
+              "scores": {
+                "remembrancer": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "挑一只还敲得响的饭盒，交给现在下夜班的人。",
+              "scores": {
+                "cynic": 3,
+                "ethical": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "如果地球的最后一条公开留言由你写，任何语言都只能译出其中一半。你打算怎样写？",
+          "options": [
+            {
+              "text": "写下常被掩去的一件事，并附可核查的姓名与日期。",
+              "scores": {
+                "ethical": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "用一句话写下我此刻自愿作出的决定。",
+              "scores": {
+                "existentialist": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "留下一句能让陌生人通过歌声相认的话。",
+              "scores": {
+                "relational": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "把意思用两个可各自成立的句子分别说一遍。",
+              "scores": {
+                "linguist": 3,
+                "existentialist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "一个观测站保存所有灭绝鸟类的最后一声鸣叫。深夜它向你索取一个声音来交换。你选哪个？",
+          "options": [
+            {
+              "text": "交出家中那扇少有人再启开的门的响动。",
+              "scores": {
+                "remembrancer": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "交出厨房定时器，一换到便备份录音交给档案馆。",
+              "scores": {
+                "cynic": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "交出削铅笔到笔尖将断时那一下回声。",
+              "scores": {
+                "aesthetic": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "交出收音机搜寻已停播电台时的噪声。",
+              "scores": {
+                "absurdist": 3,
+                "linguist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "有项技术能让你以固定年龄持续生活，代价是大家无法再和你约定具体日期。你接受前先确认什么？",
+          "options": [
+            {
+              "text": "确认「改天见」能否算一个有效约定。",
+              "scores": {
+                "linguist": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "确认紧急照料和共同责任还能怎么被落实。",
+              "scores": {
+                "ethical": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "确认我还能否单方面给自己设期限。",
+              "scores": {
+                "existentialist": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "找一个会和我生活很久的人，先尝试一周这种约法。",
+              "scores": {
+                "relational": 3,
+                "remembrancer": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "末日列车上有空位，但它只开到你最寻常的一天。你坐进车厢后，想在哪一站下？",
+          "options": [
+            {
+              "text": "在广播说列车此处绝不会停车的那一站。",
+              "scores": {
+                "absurdist": 3,
+                "linguist": 1
+              }
+            },
+            {
+              "text": "在从前有人等我放学的那一站。",
+              "scores": {
+                "remembrancer": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "在还能买到热饭、借到电话的那一站。",
+              "scores": {
+                "cynic": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "在光掠过连廊、把雨水染亮的那一站。",
+              "scores": {
+                "aesthetic": 3,
+                "cynic": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "一颗星即将熄灭，你可以替它决定最后一束光照向何处。你怎样定？",
+          "options": [
+            {
+              "text": "照向一个从来只能望见月光的窗口，陪里面的人看一回星光。",
+              "scores": {
+                "relational": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "把选择写成方位和视角，让下一人还可用别的坐标描述。",
+              "scores": {
+                "linguist": 3,
+                "aesthetic": 1
+              }
+            },
+            {
+              "text": "照向长期没有公共照明、仍有人归家的山路。",
+              "scores": {
+                "ethical": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "照向我愿意亲自抵达的一座山峰。",
+              "scores": {
+                "existentialist": 3,
+                "cynic": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "沙海里有一樽能存住任何东西的匣子，但每一千年只能有人打开一次。你打算留下什么？",
+          "options": [
+            {
+              "text": "一套当地材料也能照做的取水图。",
+              "scores": {
+                "cynic": 3,
+                "ethical": 1
+              }
+            },
+            {
+              "text": "一件内外在不同方向碎裂、同样可以站立的陶器。",
+              "scores": {
+                "aesthetic": 3,
+                "absurdist": 1
+              }
+            },
+            {
+              "text": "一把开匣时才会自动折断的钥匙。",
+              "scores": {
+                "absurdist": 3,
+                "remembrancer": 1
+              }
+            },
+            {
+              "text": "一组抄得下老口音和停顿的家书。",
+              "scores": {
+                "remembrancer": 3,
+                "linguist": 1
+              }
+            }
+          ]
+        },
+        {
+          "prompt": "万物安静之前，你获准拨一通无铃声的电话。线路已经接通，你最想怎么结束这通电话？",
+          "options": [
+            {
+              "text": "说完我一直等自己决定的那句话，主动挂断。",
+              "scores": {
+                "existentialist": 3,
+                "cynic": 1
+              }
+            },
+            {
+              "text": "等另一边先开口，问能否陪对方待到线路自行中断。",
+              "scores": {
+                "relational": 3,
+                "existentialist": 1
+              }
+            },
+            {
+              "text": "问清最后一句在对方耳中是什么意思，再复述一次。",
+              "scores": {
+                "linguist": 3,
+                "relational": 1
+              }
+            },
+            {
+              "text": "把该由我扛下的过错说清，并告诉对方补救办法。",
+              "scores": {
+                "ethical": 3,
+                "existentialist": 1
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "factions": [
+    {
+      "id": "absurdist",
+      "name": "第七封印式荒诞观测者",
+      "quote": "结局没有解释，你还是把棋下完。",
+      "profile": "当秩序一本正经地露出裂缝，你会停下来多看一眼。你善于与未知保持距离，也愿意继续参与。谨慎留意，旁观得太久，有些本可改变的事会先一步结束。"
+    },
+    {
+      "id": "cynic",
+      "name": "第欧根尼式犬儒游荡者",
+      "quote": "你卸下体面的道具，手终于能做点有用的事。",
+      "profile": "你对繁复的仪式保持警惕，总想摸到生活坚硬而可用的部分。你擅长减轻负担，也容易太快离席。真正值得你认真对待的东西，有时同样需要一点仪式。"
+    },
+    {
+      "id": "linguist",
+      "name": "维特根斯坦式语言边界守望者",
+      "quote": "你追问一个词，是因为有人正被它困住。",
+      "profile": "你常在众人急于得出结论时停顿，辨认同一个词背后不同的生活。你的耐心能让误会有去处。也有时候，先给对方一个回应，词义才能在交谈里慢慢变得清楚。"
+    },
+    {
+      "id": "remembrancer",
+      "name": "记忆考古者",
+      "quote": "回不去的地方，仍然在改变你辨路的方式。",
+      "profile": "你能从用旧的物件和一句随口的话里辨认时间的纹路。你保存细节，也借此听见曾经被忽略的人。最难的一次整理，是允许旧事留在原处，并亲手改写今天。"
+    },
+    {
+      "id": "existentialist",
+      "name": "自由的签署者",
+      "quote": "你把名字写在决定下面，让以后有迹可循。",
+      "profile": "你愿意亲手决定下一步，也肯承受选择留下的重量。越是缺少确定的答案，你越会用行动划出一条路。仍有些事需要等人并肩，有力的决定也可以由两人一起作出。"
+    },
+    {
+      "id": "relational",
+      "name": "他者的渡口人",
+      "quote": "你用心听完一句话，给了沉默一个可以停靠的地方。",
+      "profile": "你习惯先看见具体的人和他们之间未被说出的距离。你会为重逢留门，也懂得陪伴可能只持续片刻。你同样有资格说明自己的期待，让对方也能向你走一步。"
+    },
+    {
+      "id": "ethical",
+      "name": "深渊持灯者",
+      "quote": "你点灯，先照的是那些被代价遮住的人。",
+      "profile": "你想弄清一个选择由谁受益、谁来承担它的重量。细小的损失也能改变你的判断。你擅长追查责任，有时更需要练习划出一段边界，让承担成为一件可持续的事。"
+    },
+    {
+      "id": "aesthetic",
+      "name": "残缺的造物者",
+      "quote": "你没有补平裂缝，你让光从那里落下。",
+      "profile": "你注意到断处的回响、磨痕里的变化和空白怎样移动人的目光。你能让难以开口的经历拥有可感的形状。有时候作品完成以后，最重要的事是回到那场对话。"
+    }
+  ]
+};
+(() => {
+  'use strict';
+
+  const CONFIG = {
+    endpoint: '/api/sixty-four',
+    preview: true, // WeChatPayBridge restricts this to file:// and loopback origins.
+    redirectOrigins: [] // Add exact HTTPS origins only for your configured payment provider.
+  };
+  const STORAGE_KEY = 'sixty-four-progress.v1';
+  const ACT_NUMBERS = '一二三四五六七八';
+  const questions = QUIZ.chapters.flatMap((chapter) => chapter.questions);
+  const factions = QUIZ.factions;
+  const modules = [
+    '你的精神病灶与潜意识盲区',
+    '与平庸世俗和解的现实生存处方',
+    '你的宿命同路人与灵魂克星'
+  ];
+  const app = document.getElementById('app');
+  const overlay = document.getElementById('overlay');
+  const sheet = document.getElementById('sheet');
+  const announcer = document.getElementById('announcer');
+  const headerStatus = document.getElementById('masthead-side');
+  let saveFailed = false;
+  let state = readProgress();
+  let screen = '';
+  let latestResult = null;
+  let grant = null;
+  let transitionTimer = 0;
+  let computeTimer = 0;
+  let finalRevealTimer = 0;
+  let dialogSerial = 0;
+  let dialogTrigger = null;
+  let dialogKind = '';
+  let selectedPlan = 'decode';
+  let paymentStatus = '';
+  let busy = false;
+  let restoreTask = null;
+  let readyForNextAnswer = 0;
+
+  const pay = new WeChatPayBridge({
+    ...CONFIG,
+    loadPreview: typeof loadPreviewContent === 'function' ? loadPreviewContent : undefined,
+    onUpdate(update) {
+      if (update && latestResult && update.profileId === latestResult.profileId && update.message) sayPayment(update.message);
+    }
+  });
+
+  document.getElementById('texture').innerHTML = Sigil.texture();
+  window.addEventListener('pageshow', restoreWhenReady);
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') restoreWhenReady();
+  });
+
+  function scoresFor(answers) {
+    const scores = Object.fromEntries(factions.map(({id}) => [id, 0]));
+    answers.forEach((answer, index) => {
+      for (const [id, value] of Object.entries(questions[index].options[answer].scores)) {
+        scores[id] += value;
+      }
+    });
+    return scores;
+  }
+
+  function newSession() {
+    const bytes = new Uint8Array(12);
+    if (window.crypto && crypto.getRandomValues) crypto.getRandomValues(bytes);
+    else for (let i = 0; i < bytes.length; i++) bytes[i] = Math.floor(Math.random() * 256);
+    const seed = Array.from(bytes, (value) => value.toString(16).padStart(2, '0')).join('');
+    const source = new URLSearchParams(location.search).get('from');
+    return {version: 1, seed, source: ['poster', 'xhs'].includes(source) ? source : 'direct', started: false, answers: [], cursor: 0, reveal: null, stage: 'quiz', scores: scoresFor([])};
+  }
+
+  function readProgress() {
+    let entry;
+    try {
+      entry = JSON.parse(window.localStorage.getItem(STORAGE_KEY));
+    } catch (error) {
+      if (!(error instanceof SyntaxError)) saveFailed = true;
+    }
+    if (!entry || entry.version !== 1 || !/^[a-f0-9]{24}$/.test(entry.seed)) return newSession();
+    const answers = [];
+    if (Array.isArray(entry.answers)) {
+      for (const answer of entry.answers.slice(0, 64)) {
+        if (!Number.isInteger(answer) || answer < 0 || answer > 3) break;
+        answers.push(answer);
+      }
+    }
+    const complete = answers.length === 64;
+    const stage = complete && ['compute', 'result'].includes(entry.stage) ? entry.stage : 'quiz';
+    const cursor = Number.isInteger(entry.cursor) ? Math.max(0, Math.min(entry.cursor, answers.length)) : answers.length;
+    const reveal = cursor === answers.length && cursor > 0 && cursor % 8 === 0 && entry.reveal === cursor / 8 - 1 ? entry.reveal : null;
+    return {
+      version: 1, seed: entry.seed, source: ['poster', 'xhs'].includes(entry.source) ? entry.source : 'direct', started: Boolean(entry.started || answers.length), answers,
+      cursor: cursor === 64 && stage === 'quiz' && reveal === null ? 63 : cursor,
+      reveal, stage, scores: scoresFor(answers)
+    };
+  }
+
+  function saveProgress() {
+    try {
+      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      saveFailed = false;
+    } catch {
+      saveFailed = true;
+    }
+  }
+
+  function escapeHtml(value) {
+    return String(value).replace(/[&<>"']/g, (character) => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'})[character]);
+  }
+
+  function focusHeading() {
+    const heading = app.querySelector('h1, h2');
+    if (heading) heading.focus({preventScroll: true});
+  }
+
+  function goTop() {
+    window.scrollTo(0, 0);
+  }
+
+  function renderIntro() {
+    screen = 'intro';
+    headerStatus.textContent = '思想实验 · 64';
+    app.innerHTML = `<div class="hero">
+      <div class="hero-content">
+        <p class="kicker eyebrow-line">沉浸式哲学人格侧写</p>
+        <h1 tabindex="-1">穿越 <em>64</em> 重<br>思想切片</h1>
+        <p class="lead">《易经》以六爻展开六十四种变易。莱布尼茨后来在卦序中辨认出与二进制相通的结构。六次二择，恰好展开 64 种形状。</p>
+        <p class="invocation">八幕之后，你将得到一份由抉择写成的精神档案。</p>
+        <div class="facts"><span>64 道思想实验</span><span>约 6–8 分钟</span><span>免费查看侧写</span></div>
+        <button type="button" class="btn primary" data-action="start">进入第一幕 <span aria-hidden="true">↗</span></button>
+        <p class="hint">答题进度保存在本机。完整档案为可选付费内容。</p>
+      </div>
+      <div class="art-orbit hero-art" aria-hidden="true">${Sigil.badge(64, 0)}</div>
+    </div>`;
+  }
+
+  function renderQuiz(moveFocus = false) {
+    clearTimeout(finalRevealTimer);
+    const newScreen = screen !== 'quiz';
+    if (newScreen) {
+      screen = 'quiz';
+      app.innerHTML = `<div class="quiz">
+        <div class="art-orbit quiz-art" id="quiz-art" aria-hidden="true"></div>
+        <div class="quiz-stage">
+          <div class="progress-label"><p class="kicker" id="chapter-label"></p><strong id="progress-label"></strong></div>
+          <div class="segments" role="progressbar" aria-label="已完成题数" aria-valuemin="0" aria-valuemax="64" id="segments">${'<div class="segment"><span></span></div>'.repeat(8)}</div>
+          <div id="question-pane"></div>
+        </div>
+      </div>`;
+      Sigil.mount(document.getElementById('quiz-art'));
+    }
+    const index = state.reveal === null ? state.cursor : state.reveal * 8;
+    const chapterIndex = Math.min(7, Math.floor(index / 8));
+    const chapter = QUIZ.chapters[chapterIndex];
+    headerStatus.textContent = `第${ACT_NUMBERS[chapterIndex]}幕 · ${chapter.name}`;
+    document.getElementById('chapter-label').textContent = chapter.name;
+    document.getElementById('progress-label').textContent = `${String(state.answers.length).padStart(2, '0')} / 64`;
+    const segments = document.getElementById('segments');
+    segments.setAttribute('aria-valuenow', state.answers.length);
+    Array.from(segments.children).forEach((bar, idx) => {
+      bar.firstElementChild.style.width = `${Math.min(8, Math.max(0, state.answers.length - idx * 8)) * 12.5}%`;
+    });
+    Sigil.update(state.answers.length);
+    const pane = document.getElementById('question-pane');
+    if (state.reveal !== null) {
+      pane.innerHTML = `<div class="reveal">
+        <p class="kicker eyebrow-line">第${ACT_NUMBERS[chapterIndex]}幕 · 阶段精神显影</p>
+        <h2 tabindex="-1">${escapeHtml(chapter.name)}</h2>
+        <p>${escapeHtml(chapter.reveal)}</p>
+        ${chapterIndex === 7 ? '' : `<p class="next-chapter">下一幕 · ${escapeHtml(QUIZ.chapters[chapterIndex + 1].name)}</p>`}
+        <div class="action-row"><button type="button" class="btn primary" data-action="advance">${chapterIndex === 7 ? '开始 64 重演算' : '进入下一幕'} <span aria-hidden="true">→</span></button>
+        <button type="button" class="text-btn" data-action="back">返回上一题</button></div>
+      </div>`;
+      if (chapterIndex === 7) finalRevealTimer = setTimeout(startCompute, 2600);
+    } else {
+      const question = questions[state.cursor];
+      const previous = state.answers[state.cursor];
+      pane.innerHTML = `<p class="question-index">第 ${state.cursor + 1} 题</p>
+        <h2 class="question" id="question" tabindex="-1">${escapeHtml(question.prompt)}</h2>
+        <div class="options" role="group" aria-labelledby="question">${question.options.map((option, i) => `<button type="button" class="choice${previous === i ? ' chosen' : ''}" ${previous === i ? 'aria-pressed="true"' : 'aria-pressed="false"'} data-action="answer" data-index="${i}" data-question="${state.cursor}"><span aria-hidden="true">${'ABCD'[i]}</span><span>${escapeHtml(option.text)}</span></button>`).join('')}</div>
+        <div class="quiz-meta">
+          <button type="button" class="text-btn" data-action="back">${state.cursor > 0 ? '上一题' : '返回序言'}</button>
+          <span class="hint">${saveFailed ? '本机存储不可用' : '进度自动保存'}</span>
+        </div>`;
+    }
+    if (newScreen || (moveFocus && matchMedia('(max-width: 700px)').matches)) goTop();
+    if (moveFocus) focusHeading();
+  }
+
+  function choose(option, question) {
+    if (screen !== 'quiz' || state.reveal !== null || question !== state.cursor || performance.now() < readyForNextAnswer) return;
+    if (!Number.isInteger(option) || option < 0 || option > 3) return;
+    const chosen = app.querySelector(`[data-question="${question}"][data-index="${option}"]`);
+    if (chosen) chosen.classList.add('chosen');
+    const wasFrontier = state.cursor >= state.answers.length - 1;
+    state.answers[state.cursor] = option;
+    state.cursor++;
+    if (wasFrontier && state.cursor % 8 === 0) state.reveal = state.cursor / 8 - 1;
+    state.scores = scoresFor(state.answers);
+    saveProgress();
+    clearTimeout(transitionTimer);
+    readyForNextAnswer = performance.now() + 185;
+    transitionTimer = setTimeout(() => renderQuiz(true), 125);
+  }
+
+  function startCompute() {
+    if (screen === 'compute') return;
+    clearTimeout(finalRevealTimer);
+    state.stage = 'compute';
+    state.reveal = null;
+    saveProgress();
+    screen = 'compute';
+    headerStatus.textContent = '64 重演算';
+    goTop();
+    app.innerHTML = `<section class="compute">${Sigil.collapse()}<h1 tabindex="-1">64 重演算</h1><p id="compute-line" role="status">正在收束 64 重思想切片……</p></section>`;
+    focusHeading();
+    clearTimeout(computeTimer);
+    setTimeout(() => {
+      const line = document.getElementById('compute-line');
+      if (line) line.textContent = '正在剥离你的社会面具……';
+    }, 1950);
+    computeTimer = setTimeout(() => {
+      state.stage = 'result';
+      saveProgress();
+      showResult(true);
+    }, 4000);
+  }
+
+  function resultForState() {
+    const ranked = factions.map((faction, index) => ({faction, index, score: state.scores[faction.id]}));
+    ranked.sort((a, b) => b.score - a.score || a.index - b.index);
+    const winner = ranked[0];
+    let hash = 2166136261;
+    const signature = `${state.seed}:${state.answers.join('')}`;
+    for (const character of signature) hash = Math.imul(hash ^ character.charCodeAt(0), 16777619);
+    const code = (hash >>> 0).toString(16).toUpperCase().padStart(8, '0');
+    return {
+      ...winner.faction, factionId: winner.faction.id, variant: winner.index,
+      id: `64-${code.slice(0, 4)}-${code.slice(4)}`, profileId: `${state.seed}-${code}`
+    };
+  }
+
+  function showResult(moveFocus) {
+    screen = 'result';
+    latestResult = resultForState();
+    const {name, id, quote, profile, variant} = latestResult;
+    headerStatus.textContent = '公开侧写';
+    app.innerHTML = `<section class="result">
+      <article class="result-card">
+        <div>
+          <p class="kicker">精神档案 · ${escapeHtml(id)}</p>
+          <h1 tabindex="-1">${escapeHtml(name)}</h1>
+          <blockquote>「${escapeHtml(quote)}」</blockquote>
+          <p class="profile">${escapeHtml(profile)}</p>
+        </div>
+        <div class="art-orbit result-art" aria-hidden="true">${Sigil.badge(64, variant)}</div>
+      </article>
+      <div class="action-row result-actions">
+        <button type="button" class="btn" data-action="poster">生成分享海报</button>
+        ${location.protocol === 'https:' ? '<button type="button" class="btn" data-action="share">复制实验入口</button>' : ''}
+      </div>
+      <div id="premium-area"></div>
+      <div class="result-footer"><button type="button" class="text-btn" data-action="restart">重新开始实验</button></div>
+    </section>`;
+    grant = null;
+    paymentStatus = '';
+    renderPremium();
+    goTop();
+    if (moveFocus) focusHeading();
+    restoreWhenReady();
+  }
+
+  function renderPremium(shatter = false) {
+    const frame = document.getElementById('premium-area');
+    if (!frame) return;
+    const opened = Boolean(grant);
+    const archive = opened && grant.plan === 'archive';
+    frame.innerHTML = `<section class="premium${opened ? '' : ' locked'}" aria-labelledby="premium-title">
+      <div class="premium-head"><div><p class="kicker">${opened ? '火漆已揭' : '火漆封存'}</p><h2 id="premium-title" tabindex="-1">${archive ? '完整 64 象档案' : '深度精神档案'}</h2></div>
+        ${!opened || shatter ? `<div class="seal${shatter ? ' is-shattered' : ''}" aria-hidden="true">${Sigil.wax()}</div>` : ''}</div>
+      <div class="modules">${modules.map((title, i) => `<article class="module"><h3>${title}</h3>${opened ? `<p>${escapeHtml(grant.content.modules[i])}</p>` : `<p class="locked-noise" aria-hidden="true">${['ϟ▰··· ░ ▧ ▥ ▦ ░ ∴···▓▒∵··· ▱ ▰ ··· ░▧ ▧ ▥ ▦', '▓·· ∵··· ▱ ▰ ░▧ ∴··· ▧ ▥ ▦ ░ ▦ ░ ∴···▓▒', '∵· ░▧ ▧ ▥ ▦ ░ ∴···▓▒∵··· ▱ ▰ ···ϟ▰··· ░'][i]}</p>`}</article>`).join('')}</div>
+      ${archive ? renderArchive() : `<div class="unlock-row"><button type="button" class="btn primary" data-action="checkout">${opened ? '升级完整 64 象档案' : '揭开火漆封印'}</button><span class="hint">${opened ? '¥10.0 补差 · 含 8 张高清壁纸' : '¥9.9 起 · 单次解锁'}</span></div>`}
+      ${archive || pay.previewEnabled ? '' : '<button type="button" class="text-btn" data-action="restore">核对已有订单</button>'}
+      <p class="hint" id="result-status" role="status">${escapeHtml(paymentStatus)}</p>
+    </section>`;
+    if (shatter) {
+      const seal = frame.querySelector('.is-shattered');
+      if (seal) setTimeout(() => seal.remove(), 1200);
+    }
+  }
+
+  function renderArchive() {
+    const acts = QUIZ.chapters.map((chapter, c) => `<details><summary>第${ACT_NUMBERS[c]}幕 · ${escapeHtml(chapter.name)}</summary><ol start="${c * 8 + 1}">${chapter.questions.map((question, q) => {
+      const index = c * 8 + q;
+      const answer = question.options[state.answers[index]].text;
+      return `<li><strong>${escapeHtml(answer)}</strong><p>${escapeHtml(grant.content.slices[index])}</p></li>`;
+    }).join('')}</ol></details>`).join('');
+    return `<section class="archive"><h3>64 重抉择回望</h3>${acts}</section>
+      <section class="archive"><h3>高清炼金壁纸包</h3><p class="hint">8 张 · 1080 × 1920 · 选择一张预览并保存</p>
+      <div class="wall-list">${QUIZ.chapters.map((chapter, i) => `<button type="button" class="btn" data-action="wallpaper" data-index="${i}" aria-label="${escapeHtml(chapter.name)}壁纸">${escapeHtml(chapter.name)}</button>`).join('')}</div></section>`;
+  }
+
+  function context() {
+    return {factionId: latestResult.factionId, profileId: latestResult.profileId};
+  }
+
+  function sayPayment(message) {
+    paymentStatus = String(message || '');
+    const sheetStatus = sheet.querySelector('#payment-status');
+    if (sheetStatus) sheetStatus.textContent = paymentStatus;
+    const resultStatus = document.getElementById('result-status');
+    if (resultStatus) resultStatus.textContent = paymentStatus;
+  }
+
+  function validContent(result) {
+    const content = result && result.content;
+    const hasText = (value) => typeof value === 'string' && value.trim() !== '';
+    return content && ['decode', 'archive'].includes(result.plan) && Array.isArray(content.modules)
+      && content.modules.length === 3 && content.modules.every(hasText)
+      && (result.plan === 'decode' || (Array.isArray(content.slices) && content.slices.length === 64 && content.slices.every(hasText)));
+  }
+
+  function applyGrant(result, animate) {
+    if (!validContent(result)) {
+      sayPayment('档案载入失败，请核对已有订单。');
+      return;
+    }
+    if (grant && (grant.plan === 'archive' || grant.plan === result.plan)) return;
+    const firstUnlock = !grant;
+    grant = result;
+    if (dialogKind === 'checkout') closeDialog(false);
+    sayPayment('');
+    renderPremium(animate && firstUnlock);
+    announcer.textContent = '精神档案已解锁';
+    if (animate) document.getElementById('premium-title').focus({preventScroll: true});
+  }
+
+  async function restoreWhenReady(voluntary = false) {
+    if (screen !== 'result' || !latestResult || busy || restoreTask || (grant && grant.plan === 'archive')) return;
+    const active = latestResult.profileId;
+    if (voluntary === true) sayPayment('正在核对订单……');
+    restoreTask = Promise.resolve().then(() => pay.restore(context()));
+    try {
+      const result = await restoreTask;
+      if (screen !== 'result' || latestResult.profileId !== active) return;
+      if (result && result.state === 'unlocked') applyGrant(result, voluntary === true || result.fulfilledNow === true);
+      else if (voluntary === true) sayPayment(result && result.message || '当前档案暂无已确认的订单。');
+    } catch {
+      if (voluntary === true) sayPayment('暂时无法核对订单，请稍后重试。');
+    } finally {
+      restoreTask = null;
+    }
+  }
+
+  function openDialog(kind, title, content) {
+    if (overlay.hidden) dialogTrigger = document.activeElement;
+    dialogKind = kind;
+    dialogSerial++;
+    overlay.hidden = false;
+    document.body.style.overflow = 'hidden';
+    sheet.innerHTML = `<button type="button" class="close" data-action="close" aria-label="关闭">×</button><h2 id="dialog-title">${escapeHtml(title)}</h2>${content}`;
+    sheet.scrollTop = 0;
+    sheet.focus({preventScroll: true});
+    return dialogSerial;
+  }
+
+  function closeDialog(restoreFocus = true) {
+    if (overlay.hidden) return;
+    overlay.hidden = true;
+    dialogKind = '';
+    dialogSerial++;
+    document.body.style.overflow = '';
+    sheet.replaceChildren();
+    if (restoreFocus && dialogTrigger && dialogTrigger.isConnected) dialogTrigger.focus({preventScroll: true});
+    dialogTrigger = null;
+  }
+
+  function openCheckout() {
+    const upgrading = Boolean(grant);
+    selectedPlan = upgrading ? 'archive' : 'decode';
+    const plan = (key, name, price, benefits) => `<button type="button" class="plan" data-action="plan" data-plan="${key}" aria-pressed="${key === selectedPlan}"><strong>${name}</strong><b class="price">${price}</b><small>${benefits}</small></button>`;
+    openDialog('checkout', '档案收银台', `
+      <p class="hint">灵感赞助 · 一次性支付 · 解锁当前精神档案</p>
+      <div class="plan-list" role="group" aria-label="选择档案版本">
+        ${upgrading ? '' : plan('decode', '单次精神解码', '¥9.9', '三份深度侧写')}
+        ${plan('archive', '完整 64 象灵魂档案', upgrading ? '¥10.0' : '¥19.9', upgrading ? '补差升级 · 64 重回望与 8 张高清壁纸' : '三份深度侧写、64 重回望与 8 张高清壁纸')}
+      </div>
+      <button type="button" class="btn primary checkout-action" data-action="pay">确认 · ${upgrading ? '¥10.0' : '¥9.9'}</button>
+      <p class="status" id="payment-status" role="status">${escapeHtml(paymentStatus)}</p>
+      ${pay.previewEnabled ? '<details class="preview-tools"><summary>本地预览工具</summary><button type="button" class="text-btn" data-action="simulate">模拟支付成功</button></details>' : ''}`);
+    setPaymentControls();
+  }
+
+  function setPaymentControls() {
+    if (dialogKind !== 'checkout') return;
+    sheet.querySelectorAll('[data-plan], [data-action="pay"], [data-action="simulate"]').forEach((button) => {
+      button.disabled = busy;
+      if (button.dataset.plan) button.setAttribute('aria-pressed', String(button.dataset.plan === selectedPlan));
+    });
+    const receipt = sheet.querySelector('[data-action="pay"]');
+    const price = selectedPlan === 'decode' ? '¥9.9' : grant ? '¥10.0' : '¥19.9';
+    receipt.textContent = busy ? '正在核对……' : `确认 · ${price}`;
+  }
+
+  async function executePayment(simulate) {
+    if (busy || !latestResult || dialogKind !== 'checkout') return;
+    busy = true;
+    const active = latestResult.profileId;
+    const checkoutSerial = dialogSerial;
+    setPaymentControls();
+    sayPayment(simulate ? '正在开启预览档案……' : '正在准备支付……');
+    try {
+      if (restoreTask) await restoreTask.catch(() => {});
+      if (checkoutSerial !== dialogSerial || dialogKind !== 'checkout') return;
+      if (grant && (grant.plan === 'archive' || selectedPlan === 'decode')) return;
+      const expectedAmountFen = selectedPlan === 'decode' ? 990 : grant ? 1000 : 1990;
+      const request = {...context(), plan: selectedPlan, expectedAmountFen};
+      const result = await (simulate ? pay.simulate(request) : pay.buy(request));
+      if (screen !== 'result' || latestResult.profileId !== active || !result) return;
+      if (result.state === 'unlocked') applyGrant(result, true);
+      else {
+        sayPayment(result.message || '订单状态待确认。');
+        const tools = sheet.querySelector('.preview-tools');
+        if (result.state === 'preview' && tools) tools.open = true;
+      }
+    } catch {
+      sayPayment('暂时无法完成，请稍后核对订单。');
+    } finally {
+      busy = false;
+      setPaymentControls();
+    }
+  }
+
+  async function openMedia(wallIndex) {
+    const wall = Number.isInteger(wallIndex);
+    if (!latestResult || (wall && (!grant || grant.plan !== 'archive' || wallIndex < 0 || wallIndex > 7))) return;
+    const result = {...latestResult, entryLabel: location.protocol === 'https:' ? location.host + (location.pathname === '/' ? '' : location.pathname) : ''};
+    const title = wall ? `${QUIZ.chapters[wallIndex].name} · 高清壁纸` : '分享精神侧写';
+    const serial = openDialog('media', title, '<p class="hint" role="status">图像生成中……</p>');
+    try {
+      const imageUrl = await (wall ? Sigil.wallpaper(result, wallIndex) : Sigil.poster(result));
+      if (serial !== dialogSerial) return;
+      const hint = sheet.querySelector('.hint');
+      hint.textContent = '在微信中可长按图片保存。';
+      const image = document.createElement('img');
+      image.className = 'media';
+      image.alt = wall ? title : `${result.name} · ${result.id} · ${result.quote}`;
+      image.src = imageUrl;
+      const download = document.createElement('a');
+      download.className = 'btn standalone';
+      download.href = imageUrl;
+      download.download = `${result.id}-${wall ? `wallpaper-${wallIndex + 1}` : 'poster'}.png`;
+      download.textContent = '下载 PNG';
+      sheet.append(image, download);
+    } catch {
+      if (serial === dialogSerial) sheet.querySelector('.hint').textContent = '图像生成失败，请关闭后重试。';
+    }
+  }
+
+  async function shareEntry() {
+    const url = new URL(location.href);
+    url.search = '?from=poster';
+    url.hash = '';
+    try {
+      await navigator.clipboard.writeText(url.href);
+      sayPayment('实验入口已复制。');
+    } catch {
+      openDialog('link', '实验入口', `<p class="hint">长按此链接复制。</p><p><a href="${escapeHtml(url.href)}">${escapeHtml(url.href)}</a></p>`);
+    }
+  }
+
+  document.addEventListener('click', (event) => {
+    if (event.target === overlay) closeDialog();
+    const control = event.target.closest('[data-action]');
+    if (!control || control.disabled || (!overlay.hidden && !sheet.contains(control))) return;
+    switch (control.dataset.action) {
+      case 'start':
+        state.started = true;
+        saveProgress();
+        renderQuiz(true);
+        break;
+      case 'answer':
+        choose(Number(control.dataset.index), Number(control.dataset.question));
+        break;
+      case 'back':
+        clearTimeout(transitionTimer);
+        if (state.cursor === 0) {
+          state.started = state.answers.length > 0;
+          saveProgress();
+          renderIntro();
+          focusHeading();
+        } else {
+          state.reveal = null;
+          state.cursor--;
+          saveProgress();
+          renderQuiz(true);
+        }
+        break;
+      case 'advance':
+        if (state.cursor === 64) startCompute();
+        else {
+          state.reveal = null;
+          saveProgress();
+          renderQuiz(true);
+        }
+        break;
+      case 'poster': openMedia(); break;
+      case 'wallpaper': openMedia(Number(control.dataset.index)); break;
+      case 'share': shareEntry(); break;
+      case 'checkout': openCheckout(); break;
+      case 'restore': restoreWhenReady(true); break;
+      case 'plan': selectedPlan = control.dataset.plan; setPaymentControls(); break;
+      case 'pay': executePayment(false); break;
+      case 'simulate': executePayment(true); break;
+      case 'close': closeDialog(); break;
+      case 'restart':
+        if (busy) sayPayment('请等待订单核对结束。');
+        else openDialog('restart', '重新开始这次实验？', '<p class="hint">重新开始会清除本机的当前作答和侧写。请先保存你想留下的海报。</p><button type="button" class="btn primary" data-action="confirm-restart">清除作答并返回序言</button>');
+        break;
+      case 'confirm-restart':
+        if (busy) break;
+        closeDialog(false);
+        latestResult = null;
+        grant = null;
+        state = newSession();
+        saveProgress();
+        renderIntro();
+        goTop();
+        focusHeading();
+        break;
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (overlay.hidden) return;
+    if (event.key === 'Escape') closeDialog();
+    if (event.key !== 'Tab') return;
+    const focusable = Array.from(sheet.querySelectorAll('button:not(:disabled), a[href], summary')).filter((element) => element.getClientRects().length);
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && (document.activeElement === first || document.activeElement === sheet)) {
+      event.preventDefault();
+      if (last) last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      if (first) first.focus();
+    }
+  });
+
+  if (state.stage === 'result') showResult(false);
+  else if (state.stage === 'compute') startCompute();
+  else if (state.started) renderQuiz();
+  else renderIntro();
+})();
+
+  </script>
+</body>
+</html>
