@@ -280,7 +280,7 @@
       <div class="premium-head"><div><p class="kicker">${opened ? '火漆已揭' : '火漆封存'}</p><h2 id="premium-title" tabindex="-1">${archive ? '完整 64 象档案' : '深度精神档案'}</h2></div>
         ${!opened || shatter ? `<div class="seal${shatter ? ' is-shattered' : ''}" aria-hidden="true">${Sigil.wax()}</div>` : ''}</div>
       <div class="modules">${modules.map((title, i) => `<article class="module"><h3>${title}</h3>${opened ? `<p>${escapeHtml(grant.content.modules[i])}</p>` : `<p class="locked-noise" aria-hidden="true">${['ϟ▰··· ░ ▧ ▥ ▦ ░ ∴···▓▒∵··· ▱ ▰ ··· ░▧ ▧ ▥ ▦', '▓·· ∵··· ▱ ▰ ░▧ ∴··· ▧ ▥ ▦ ░ ▦ ░ ∴···▓▒', '∵· ░▧ ▧ ▥ ▦ ░ ∴···▓▒∵··· ▱ ▰ ···ϟ▰··· ░'][i]}</p>`}</article>`).join('')}</div>
-      ${archive ? renderArchive() : `<div class="unlock-row"><button type="button" class="btn primary" data-action="checkout">${opened ? '升级完整 64 象档案' : '揭开火漆封印'}</button><span class="hint">${opened ? '¥10.0 补差 · 含 8 张高清壁纸' : '¥9.9 起 · 单次解锁'}</span></div>`}
+      ${archive ? renderArchive() : `<div class="unlock-row"><button type="button" class="btn primary" data-action="checkout">${opened ? '升级完整 64 象档案' : '揭开火漆封印'}</button><span class="hint">${opened ? '升级规则以爱发电页面为准' : '¥9.99 / 月起 · 会员有效期内解锁'}</span></div>`}
       ${archive || pay.previewEnabled ? '' : '<button type="button" class="text-btn" data-action="restore">核对已有订单</button>'}
       <p class="hint" id="result-status" role="status">${escapeHtml(paymentStatus)}</p>
     </section>`;
@@ -377,58 +377,28 @@
   }
 
   function openCheckout() {
-    const upgrading = Boolean(grant);
-    selectedPlan = upgrading ? 'archive' : 'decode';
-    const plan = (key, name, price, benefits) => `<button type="button" class="plan" data-action="plan" data-plan="${key}" aria-pressed="${key === selectedPlan}"><strong>${name}</strong><b class="price">${price}</b><small>${benefits}</small></button>`;
-    openDialog('checkout', '档案收银台', `
-      <p class="hint">灵感赞助 · 一次性支付 · 解锁当前精神档案</p>
-      <div class="plan-list" role="group" aria-label="选择档案版本">
-        ${upgrading ? '' : plan('decode', '单次精神解码', '¥9.9', '三份深度侧写')}
-        ${plan('archive', '完整 64 象灵魂档案', upgrading ? '¥10.0' : '¥19.9', upgrading ? '补差升级 · 64 重回望与 8 张高清壁纸' : '三份深度侧写、64 重回望与 8 张高清壁纸')}
+    openDialog('checkout', '选择会员档位', `
+      <p class="hint">在爱发电完成赞助。会员有效期内享有对应权益，具体规则以爱发电页面为准。</p>
+      <div class="plan-list">
+        <div class="plan"><strong>精神解码</strong><b class="price">¥9.99 / 月</b><small>解锁互动测试的深度内容</small></div>
+        <div class="plan"><strong>完整档案</strong><b class="price">¥19.99 / 月</b><small>包含基础权益与高级版功能</small></div>
       </div>
-      <button type="button" class="btn primary checkout-action" data-action="pay">确认 · ${upgrading ? '¥10.0' : '¥9.9'}</button>
-      <p class="status" id="payment-status" role="status">${escapeHtml(paymentStatus)}</p>
-      ${pay.previewEnabled ? '<details class="preview-tools"><summary>本地预览工具</summary><button type="button" class="text-btn" data-action="simulate">模拟支付成功</button></details>' : ''}`);
-    setPaymentControls();
-  }
-
-  function setPaymentControls() {
-    if (dialogKind !== 'checkout') return;
-    sheet.querySelectorAll('[data-plan], [data-action="pay"], [data-action="simulate"]').forEach((button) => {
-      button.disabled = busy;
-      if (button.dataset.plan) button.setAttribute('aria-pressed', String(button.dataset.plan === selectedPlan));
-    });
-    const receipt = sheet.querySelector('[data-action="pay"]');
-    const price = selectedPlan === 'decode' ? '¥9.9' : grant ? '¥10.0' : '¥19.9';
-    receipt.textContent = busy ? '正在核对……' : `确认 · ${price}`;
+      <a class="btn primary checkout-action" href="https://ifdian.net/a/lomoxyz" target="_blank" rel="noopener noreferrer">前往爱发电选择档位</a>
+      <p class="hint">付款后自动核验功能正在接入，当前页面暂不能确认付款或解锁报告。</p>
+      ${pay.previewEnabled ? '<details class="preview-tools"><summary>本地预览工具</summary><button type="button" class="text-btn" data-action="simulate" data-plan="decode">模拟基础会员</button>　<button type="button" class="text-btn" data-action="simulate" data-plan="archive">模拟高级会员</button></details>' : ''}`);
   }
 
   async function executePayment(simulate) {
-    if (busy || !latestResult || dialogKind !== 'checkout') return;
+    if (!simulate || busy || !latestResult || dialogKind !== 'checkout') return;
     busy = true;
-    const active = latestResult.profileId;
-    const checkoutSerial = dialogSerial;
-    setPaymentControls();
-    sayPayment(simulate ? '正在开启预览档案……' : '正在准备支付……');
     try {
-      if (restoreTask) await restoreTask.catch(() => {});
-      if (checkoutSerial !== dialogSerial || dialogKind !== 'checkout') return;
-      if (grant && (grant.plan === 'archive' || selectedPlan === 'decode')) return;
-      const expectedAmountFen = selectedPlan === 'decode' ? 990 : grant ? 1000 : 1990;
-      const request = {...context(), plan: selectedPlan, expectedAmountFen};
-      const result = await (simulate ? pay.simulate(request) : pay.buy(request));
-      if (screen !== 'result' || latestResult.profileId !== active || !result) return;
-      if (result.state === 'unlocked') applyGrant(result, true);
-      else {
-        sayPayment(result.message || '订单状态待确认。');
-        const tools = sheet.querySelector('.preview-tools');
-        if (result.state === 'preview' && tools) tools.open = true;
-      }
+      const result = await pay.simulate({...context(), plan: selectedPlan});
+      if (result && result.state === 'unlocked') applyGrant(result, true);
+      else sayPayment(result && result.message || '本地预览暂不可用。');
     } catch {
-      sayPayment('暂时无法完成，请稍后核对订单。');
+      sayPayment('本地预览暂不可用。');
     } finally {
       busy = false;
-      setPaymentControls();
     }
   }
 
@@ -510,9 +480,7 @@
       case 'share': shareEntry(); break;
       case 'checkout': openCheckout(); break;
       case 'restore': restoreWhenReady(true); break;
-      case 'plan': selectedPlan = control.dataset.plan; setPaymentControls(); break;
-      case 'pay': executePayment(false); break;
-      case 'simulate': executePayment(true); break;
+      case 'simulate': selectedPlan = control.dataset.plan; executePayment(true); break;
       case 'close': closeDialog(); break;
       case 'restart':
         if (busy) sayPayment('请等待订单核对结束。');

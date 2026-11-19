@@ -177,7 +177,7 @@ const eventually = async (condition) => {
   test.click('checkout');
   assert.match(test.ids.get('sheet').innerHTML, /¥9\.9/);
   assert.match(test.ids.get('sheet').innerHTML, /¥19\.9/);
-  test.click('simulate');
+  test.click('simulate', {plan: 'decode'});
   await eventually(() => /火漆已揭/.test(test.ids.get('premium-area').innerHTML));
   assert.match(test.ids.get('premium-area').innerHTML, /is-shattered/);
   assert.ok(!test.ids.get('premium-area').innerHTML.includes('locked-noise'));
@@ -186,8 +186,8 @@ const eventually = async (condition) => {
   await eventually(() => /火漆已揭/.test(test.ids.get('premium-area').innerHTML));
   assert.match(test.ids.get('app').innerHTML, new RegExp(id));
   test.click('checkout');
-  assert.match(test.ids.get('sheet').innerHTML, /¥10\.0/);
-  test.click('simulate');
+  assert.match(test.ids.get('sheet').innerHTML, /¥19\.99 \/ 月/);
+  test.click('simulate', {plan: 'archive'});
   await eventually(() => /64 重抉择回望/.test(test.ids.get('premium-area').innerHTML));
   assert.equal((test.ids.get('premium-area').innerHTML.match(/<li>/g) || []).length, 64);
   assert.equal((test.ids.get('premium-area').innerHTML.match(/data-action="wallpaper"/g) || []).length, 8);
